@@ -44,7 +44,7 @@
                     <td style="text-align:left;width:50%;">
                         <h6 style="margin-top: 0;font-size:18px;font-weight: normal;"><strong>Sl No:</strong> <?php echo $info->id ?></h6>
                     </td>
-                    <td style="text-align:right;width:50%;"><h6 style="margin-top: 0;font-size:18px;font-weight: normal;"><strong>Date:</strong> <?php echo date('d', strtotime($info->timestamp)); ?>-<?php echo date('M', strtotime($info->timestamp)); ?>-<?php echo date('Y', strtotime($info->timestamp)); ?> 19-Sep-2021</h6></td>
+                    <td style="text-align:right;width:50%;"><h6 style="margin-top: 0;font-size:18px;font-weight: normal;"><strong>Date:</strong> <?php echo date('d', strtotime($info->timestamp)); ?>-<?php echo date('M', strtotime($info->timestamp)); ?>-<?php echo date('Y', strtotime($info->timestamp)); ?></h6></td>
                 </tr>
             </tbody>
         </table>
@@ -52,7 +52,7 @@
             <tbody style="width:100%;">
                 <tr>
                     <td style="text-align:left;width:100%;">
-                        <h6 style="margin-top: 0;font-size:18px;font-weight: normal;line-height:2;">Received with thanks from <span style="border-bottom:1px solid #000;font-weight: 600;">Mr. <?php echo $info->fname ?> <?php echo $info->lname ?></span>, a sum of Rupees <span style="border-bottom:1px solid #000;font-weight: 600;"><?php echo amtWord($info->amount); ?> Only</span>, vide reference  <span style="border-bottom:1px solid #000;font-weight: 600;">NEFT/208387095</span>, towards <span style="border-bottom:1px solid #000;font-weight: 600;">Various seva activities</span></h6>
+                        <h6 style="margin-top: 0;font-size:18px;font-weight: normal;line-height:2;">Received with thanks from <span style="font-weight: 600;">Mr. <?php echo $info->fname ?> <?php echo $info->lname ?></span>, a sum of Rupees <span style="font-weight: 600;"><?php echo amtWord($info->amount); ?> Only</span>, vide reference  <span style="font-weight: 600;"><?php echo $info->payment_id ?></span>, towards <span style="font-weight: 600;">Various seva activities</span></h6>
                     </td>
                 </tr>
             </tbody>
@@ -72,7 +72,7 @@ encouragement.</h6>
             <tbody style="width:100%;">
                 <tr>
                     <td style="text-align:left;width:100%;">
-                        <h6 style="margin-top: 0;font-size:18px;font-weight: normal;"><strong>Amount:</strong> <span style="border-bottom:1px solid #000;font-weight: 500;text-align:center;">RS. <?php echo $info->amount ?></span></h6>
+                        <h6 style="margin-top: 0;font-size:18px;font-weight: normal;"><strong>Amount:</strong> <span style="border-bottom:1px solid #000;font-weight: 500;text-align:center;">Rs. <?php echo $info->amount ?></span></h6>
                     </td>
                 </tr>
             </tbody>

@@ -23,12 +23,20 @@ class Services extends CI_Controller {
     public function index($type = null)
     {
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
+			case "madhava-seva":
+              $type= "madhava-seva";
+			  break;
+
+			case "manava-seva":
+              $type= "manava-seva";
 			  break;
 
 			case "vedic-rituals":
                 $type= "vedic-rituals";
+				break;
+
+			case "activities":
+                $type= "activities";
 				break;
 			
 			default:
@@ -45,13 +53,21 @@ class Services extends CI_Controller {
 	{
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-			  break;
+			case "madhava-seva":
+                $type= "madhava-seva";
+                break;
 
-			case "vedic-rituals":
+            case "manava-seva":
+                $type= "manava-seva";
+                break;
+
+            case "vedic-rituals":
                 $type= "vedic-rituals";
-				break;
+                break;
+
+            case "activities":
+                $type= "activities";
+                break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
@@ -191,13 +207,21 @@ class Services extends CI_Controller {
     public function delete($id = '', $type = '')
     {
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-			  break;
-
-			case "vedic-rituals":
-                $type= "vedic-rituals";
-				break;
+			case "madhava-seva":
+                $type= "madhava-seva";
+                break;
+  
+              case "manava-seva":
+                $type= "manava-seva";
+                break;
+  
+              case "vedic-rituals":
+                  $type= "vedic-rituals";
+                  break;
+  
+              case "activities":
+                  $type= "activities";
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
@@ -390,6 +414,8 @@ class Services extends CI_Controller {
                 if($application_id != false)
                 {
                     $this->m_services->updateServiceGallery($gallerydata, $id);
+                    $this->m_services->updateServiceGalleryVideo($gallerydata, $id);
+                    $this->m_services->updateServiceGalleryAudio($gallerydata, $id);
                     $this->session->set_flashdata('success','Service Updated');
                     redirect('services/'.$type);
                     
@@ -412,13 +438,21 @@ class Services extends CI_Controller {
 	{
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-			  break;
-
-			case "vedic-rituals":
-                $type= "vedic-rituals";
-				break;
+			case "madhava-seva":
+                $type= "madhava-seva";
+                break;
+  
+              case "manava-seva":
+                $type= "manava-seva";
+                break;
+  
+              case "vedic-rituals":
+                  $type= "vedic-rituals";
+                  break;
+  
+              case "activities":
+                  $type= "activities";
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
@@ -510,13 +544,21 @@ class Services extends CI_Controller {
 	{
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-			  break;
-
-			case "vedic-rituals":
-                $type= "vedic-rituals";
-				break;
+			case "madhava-seva":
+                $type= "madhava-seva";
+                break;
+  
+              case "manava-seva":
+                $type= "manava-seva";
+                break;
+  
+              case "vedic-rituals":
+                  $type= "vedic-rituals";
+                  break;
+  
+              case "activities":
+                  $type= "activities";
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
@@ -606,14 +648,24 @@ class Services extends CI_Controller {
 	{
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-              $data['type']= "sevas";
+			case "madhava-seva":
+              $type= "madhava-seva";
+              $data['type']= "madhava-seva";
+			  break;
+
+			case "manava-seva":
+              $type= "manava-seva";
+              $data['type']= "manava-seva";
 			  break;
 
 			case "vedic-rituals":
                 $type= "vedic-rituals";
                 $data['type']= "vedic-rituals";
+				break;
+
+			case "activities":
+                $type= "activities";
+                $data['type']= "activities";
 				break;
 			
 			default:
@@ -664,15 +716,25 @@ class Services extends CI_Controller {
 	{
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
-			case "sevas":
-              $type= "sevas";
-              $data['type']= "sevas";
-			  break;
-
-			case "vedic-rituals":
-                $type= "vedic-rituals";
-                $data['type']= "vedic-rituals";
-				break;
+			case "madhava-seva":
+                $type= "madhava-seva";
+                $data['type']= "madhava-seva";
+                break;
+  
+              case "manava-seva":
+                $type= "manava-seva";
+                $data['type']= "manava-seva";
+                break;
+  
+              case "vedic-rituals":
+                  $type= "vedic-rituals";
+                  $data['type']= "vedic-rituals";
+                  break;
+  
+              case "activities":
+                  $type= "activities";
+                  $data['type']= "activities";
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');

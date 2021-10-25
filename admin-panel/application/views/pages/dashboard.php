@@ -29,13 +29,53 @@
         border-radius: 10px;
     }
 
-    .collection.with-header .collection-item{padding-left:0 ;padding: 5px 15px}
+    .collection.with-header .collection-item {
+        padding-left: 0;
+        padding: 5px 15px
+    }
+
     .collection .collection-item {
         padding: 5px 9px;
     }
 
     .collection.with-header .collection-header {
         padding: 10px 15px;
+    }
+
+    .card .card-content {
+        padding: 24px 0;
+    }
+
+    .pt-0 {
+        padding-top: 0 !important;
+    }
+
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .pb-5 {
+        padding-bottom: 5px !important;
+    }
+
+    .font-bold {
+        font-weight: bold;
+    }
+
+    .text-white {
+        color: #fff !important;
+    }
+
+    .card .card-action {
+        border-top: none !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .list-title {
+        font-size: 20px !important;
+        padding: 10px;
+        margin: 0 !important;
     }
     </style>
 </head>
@@ -63,135 +103,268 @@
                         <div class="dash-list">
 
                             <div class="row">
-                                <div class="col s12 m12 l12">
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Registration<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-user li-icon"></i></span></h5>
-                                                </li>
+                                <div class="top-count">
+                                    <div class="col s12 m3">
+                                        <div class="card green hoverable">
+                                            <div class="card-content white-text center-align pb-5">
+                                                <span class="card-title center-align text-white"><i
+                                                        class="fas fa-user"></i></span>
+                                            </div>
+
+                                            <div class="card-action pt-0 pb-0">
+                                                <!-- <span class="white-text font-bold">Registration</span> -->
                                                 <a href="<?php echo base_url('registration');?>"
-                                                    class="collection-item">
-                                                    <div><span>Total Applications</span><span
-                                                            class="secondary-content"><?php echo $user_count;?></span>
+                                                    class="collection-item text-white font-bold">
+                                                    <div><span>Registration</span><span
+                                                            class="secondary-content text-white"><?php echo $user_count;?></span>
                                                     </div>
                                                 </a>
-
-                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Enquiries<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-envelope li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('enquiries');?>">
-                                                    <div><span>Total Applications</span><span
-                                                            class="secondary-content"><?php echo $contact_count;?></span>
+                                    <div class="col s12 m3">
+                                        <div class="card orange hoverable">
+                                            <div class="card-content white-text center-align pb-5">
+                                                <span class="card-title center-align text-white"><i
+                                                        class="fas fa-envelope"></i></span>
+                                            </div>
+                                            <div class="card-action  pt-0 pb-0">
+                                                <a class="collection-item text-white font-bold"
+                                                    href="<?php echo base_url('enquiries');?>">
+                                                    <div><span>Enquiries</span><span
+                                                            class="secondary-content text-white"><?php echo $contact_count;?></span>
                                                     </div>
                                                 </a>
-
-                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Literatures<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-book li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('literature');?>">
-                                                    <div><span>Total Applications</span><span
-                                                            class="secondary-content"><?php echo $literature_count;?></span>
+                                    <div class="col s12 m3">
+                                        <div class="card blue darken-1 hoverable">
+                                            <div class="card-content white-text center-align pb-5">
+                                                <span class="card-title center-align text-white"><i
+                                                        class="fas fa-book"></i></span>
+                                            </div>
+                                            <div class="card-action   pt-0 pb-0">
+                                                <a class="collection-item text-white font-bold"
+                                                    href="<?php echo base_url('literature');?>">
+                                                    <div><span>Literatures</span><span
+                                                            class="secondary-content text-white"><?php echo $literature_count;?></span>
                                                     </div>
                                                 </a>
-
-                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Subscription<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-address-card li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('subscription');?>">
-                                                    <div><span>Total Applications</span><span
-                                                            class="secondary-content"><?php echo $subscription_count;?></span>
-                                                    </div>
-                                                </a>
 
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Volunteers<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-users li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('volunteer');?>">
-                                                    <div><span>Total Applications</span><span
-                                                            class="secondary-content"><?php echo $volunteer_count;?></span>
+                                    <div class="col s12 m3">
+                                        <div class="card green  darken-4 hoverable">
+                                            <div class="card-content white-text center-align pb-5">
+                                                <span class="card-title center-align text-white"><i
+                                                        class="fas fa-address-card"></i></span>
+                                            </div>
+                                            <div class="card-action   pt-0 pb-0">
+                                                <a class="collection-item text-white font-bold"
+                                                    href="<?php echo base_url('subscription');?>">
+                                                    <div><span>Subscription</span><span
+                                                            class="secondary-content text-white"><?php echo $subscription_count;?></span>
                                                     </div>
                                                 </a>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Events<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-calendar-alt li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('events/manava-seva');?>">
-                                                    <div><span>Manava Seva</span><span
-                                                            class="secondary-content"><?php echo $manava_count;?></span>
-                                                    </div>
-                                                </a>
-                                                <a class="collection-item" href="<?php echo base_url('events/madhava-seva');?>">
-                                                    <div><span>Madhava Seva</span><span
-                                                            class="secondary-content"><?php echo $madhava_count;?></span>
-                                                    </div>
-                                                </a>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col s12 m6 l4">
-                                        <div class="dashboard-repord">
-                                            <ul class="collection with-header">
-                                                <li class="collection-header">
-                                                    <h5>Donations<span
-                                                            class="secondary-content"><i style="padding-right:0;color:white;" class="fas fa-hand-holding-usd li-icon"></i></span></h5>
-                                                </li>
-                                                <a class="collection-item" href="<?php echo base_url('donation/sai-mayee-trust');?>">
-                                                    <div><span>Sai Mayee Trust</span><span
-                                                            class="secondary-content">Rs. <?php echo $mayee_count->amount;?></span>
-                                                    </div>
-                                                </a>
-                                                <a class="collection-item" href="<?php echo base_url('donation/sai-meru-mathi-trust');?>">
-                                                    <div><span>Sai Meru Mathi Trust</span><span
-                                                            class="secondary-content">Rs. <?php echo $meru_count->amount;?></span>
-                                                    </div>
-                                                </a>
-
-                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="top-count">
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+                            <!-- <div class="row">
+                                <div class="top-count">
+
+                                
+                                    
+                                    <div class="col s12 m3">
+                                        <div class="card lime  darken-4 hoverable">
+                                            <div class="card-content white-text center-align pb-5">
+                                                <span class="card-title center-align text-white"><i
+                                                        class="fas fa-hand-holding-usd"></i></span>
+                                            </div>
+                                            <div class="card-action   pt-0 pb-0">
+                                                <a class="collection-item text-white font-bold"
+                                                    href="<?php echo base_url('donation/sai-meru-mathi-trust');?>">
+                                                    <div><span>Sri Sai Meru Mathi Trust</span><span
+                                                            class="secondary-content text-white"><?php echo $meru_count->amount;?></span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="row">
+
+                                <div class="col m9 s12 l9">
+
+                                    <div class="card  darken-1">
+                                        <div class="card-content ">
+                                            <div class="x_panel">
+
+                                                <div class="x_title">
+
+                                                    <h2 class="list-title ">Sai Meru Mathi Trust Donation By Month</h2>
+
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+
+
+                                                <div class="x_content das-chart chrt-width">
+
+                                                    <canvas id="myChart"></canvas>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card blue-grey hoverable">
+                                        <div class="card-content white-text center-align pb-5">
+                                            <span class="card-title center-align text-white"><i
+                                                    class="fas fa-users"></i></span>
+                                        </div>
+
+                                        <div class="card-action pt-0 pb-0">
+                                            <!-- <span class="white-text font-bold">Registration</span> -->
+                                            <a class="collection-item text-white font-bold"
+                                                href="<?php echo base_url('volunteer');?>">
+                                                <div><span>Volunteers</span><span
+                                                        class="secondary-content text-white font-bold"><?php echo $volunteer_count;?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card purple hoverable">
+                                        <div class="card-content white-text center-align pb-5">
+                                            <span class="card-title center-align text-white"><i
+                                                    class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                        <div class="card-action  pt-0 pb-0">
+                                            <a class="collection-item text-white font-bold"
+                                                href="<?php echo base_url('events/manava-seva');?>">
+                                                <div><span>Manava Seva Events</span><span
+                                                        class="secondary-content text-white"><?php echo $manava_count;?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card indigo darken-4 hoverable">
+                                        <div class="card-content white-text center-align pb-5">
+                                            <span class="card-title center-align text-white"><i
+                                                    class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                        <div class="card-action   pt-0 pb-0">
+                                            <a class="collection-item text-white font-bold"
+                                                href="<?php echo base_url('events/madhava-seva');?>">
+                                                <div><span>Madhava Seva Events</span><span
+                                                        class="secondary-content text-white"><?php echo $madhava_count;?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
 
 
                             </div>
+                            <div class="row">
+
+                                <div class="col m9 s12 l9">
+
+                                    <div class="card  darken-1">
+                                        <div class="card-content ">
+                                            <div class="x_panel">
+
+                                                <div class="x_title">
+
+                                                    <h2 class="list-title ">Sai Mayee Trust Donation By Month</h2>
+
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+
+
+                                                <div class="x_content das-chart chrt-width">
+
+                                                    <canvas id="myChart2"></canvas>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card cyan  darken-4 hoverable">
+                                        <div class="card-content white-text center-align pb-5">
+                                            <span class="card-title center-align text-white"><i
+                                                    class="fas fa-hand-holding-usd"></i></span>
+                                        </div>
+                                        <div class="card-action   pt-0 pb-0">
+                                            <a class="collection-item text-white font-bold"
+                                                href="<?php echo base_url('donation/sai-mayee-trust');?>">
+                                                <div><span>Sai Mayee Trust</span><span
+                                                        class="secondary-content text-white"><?php echo $mayee_count->amount;?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card lime  darken-4 hoverable">
+                                        <div class="card-content white-text center-align pb-5">
+                                            <span class="card-title center-align text-white"><i
+                                                    class="fas fa-hand-holding-usd"></i></span>
+                                        </div>
+                                        <div class="card-action   pt-0 pb-0">
+                                            <a class="collection-item text-white font-bold"
+                                                href="<?php echo base_url('donation/sai-meru-mathi-trust');?>">
+                                                <div><span>Sri Sai Meru Mathi Trust</span><span
+                                                        class="secondary-content text-white"><?php echo $meru_count->amount;?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -216,24 +389,127 @@
     </script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/dataTable/button/js/pdfmake.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/dataTable/button/js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+    < script >
+        $(document).ready(function() {
+            $('table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf'
+                ],
+            });
+            $('select').formSelect();
 
-    <script>
-    $(document).ready(function() {
-        $('table').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf'
-            ],
+            $('#header-include').load('include/header.html');
+            $('#sidemenu-include').load('include/menu.html');
         });
-        $('select').formSelect();
-
-        $('#header-include').load('include/header.html');
-        $('#sidemenu-include').load('include/menu.html');
-    });
     </script>
 
     <script>
     <?php $this->load->view('include/message.php'); ?>
+    </script>
+
+    <script>
+    // Line charts
+    var label = [];
+    <?php if(!empty($mathi_graph_label)){ ?>
+    <?php for($i=0;$i<count($mathi_graph_label);$i++){ ?>
+        label.push('<?php echo $mathi_graph_label[$i]; ?>')
+   <?php } } ?>
+    var data = [];
+    <?php if(!empty($mathi_graph_data)){ ?>
+    <?php for($i=0;$i<count($mathi_graph_data);$i++){ ?>
+        data.push('<?php echo $mathi_graph_data[$i]; ?>')
+   <?php } } ?>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+
+        type: 'line',
+        data: {
+            labels: label,
+            datasets: [{
+                label: 'Amount',
+                fill: true,
+                lineTension: 0.0,
+                backgroundColor: 'rgba(75, 192, 192, 1)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: '#000',
+                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBorderWidth: 3,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
+                pointHoverBorderWidth: 5,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: data,
+                spanGaps: false,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    // Line charts
+    var label = [];
+    <?php if(!empty($mayee_graph_label)){ ?>
+    <?php for($i=0;$i<count($mayee_graph_label);$i++){ ?>
+        label.push('<?php echo $mayee_graph_label[$i]; ?>')
+   <?php } } ?>
+    var data = [];
+    <?php if(!empty($mayee_graph_data)){ ?>
+    <?php for($i=0;$i<count($mayee_graph_data);$i++){ ?>
+        data.push('<?php echo $mayee_graph_data[$i]; ?>')
+   <?php } } ?>
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+
+        type: 'line',
+        data: {
+            labels: label,
+            datasets: [{
+                label: 'Amount',
+                fill: true,
+                lineTension: 0.0,
+                backgroundColor: 'rgba(75, 192, 192, 1)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: '#000',
+                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBorderWidth: 3,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
+                pointHoverBorderWidth: 5,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: data,
+                spanGaps: false,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
     </script>
 
 </body>

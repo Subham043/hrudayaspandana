@@ -70,6 +70,25 @@ class M_services extends CI_Model {
         }
 		
     }
+    public function updateServiceGalleryVideo($data, $id){
+        // print_r($data);echo $id;exit;
+        $this->db->where('service_id',$id);
+		if($this->db->update('gallery-videos', $data)){
+            return true;
+        }else{
+            return false;
+        }
+		
+    }
+    public function updateServiceGalleryAudio($data, $id){
+        $this->db->where('service_id',$id);
+		if($this->db->update('gallery-audios', $data)){
+            return true;
+        }else{
+            return false;
+        }
+		
+    }
 
     public function serviceGet($type){
         return  $this->db->where('type', $type)->order_by('id','desc')->get('services')->result();

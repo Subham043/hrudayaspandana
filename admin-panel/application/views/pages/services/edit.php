@@ -157,12 +157,18 @@ $this->load->library('encryption');
                                                             <span>*</span></label>
                                                         <select name="type" id="type"
                                                             class="form-control inner-pad">
-                                                            <option value="sevas"
-                                                                <?php echo $result->type == 'sevas' ? 'selected' : ''; ?>>
-                                                                Sevas</option>
+                                                            <option value="manava-seva"
+                                                                <?php echo $result->type == 'manava-seva' ? 'selected' : ''; ?>>
+                                                                Manava Seva</option>
+                                                            <option value="madhava-seva"
+                                                                <?php echo $result->type == 'madhava-seva' ? 'selected' : ''; ?>>
+                                                                Madhava Seva</option>
                                                             <option value="vedic-rituals"
                                                                 <?php echo $result->type == 'vedic-rituals' ? 'selected' : ''; ?>>
                                                                 Vedic Rituals</option>
+                                                            <option value="activities"
+                                                                <?php echo $result->type == 'activities' ? 'selected' : ''; ?>>
+                                                                Activities</option>
                                                         </select>
                                                         <div style="color:red;"><?php echo form_error('type'); ?>
                                                         </div>

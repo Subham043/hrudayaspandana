@@ -19,47 +19,30 @@
                         <a href="<?php echo base_url('about'); ?>"
                             class="menu-links <?php echo($this->uri->segment(1) == 'about') ? 'active-menu-link' :'' ?>">About</a>
                     </li>
-                    <!-- <li class="menu-li">
-                        <a href="<?php echo base_url('services'); ?>"
-                            class="menu-links <?php echo($this->uri->segment(1) == 'services') ? 'active-menu-link' :'' ?>">Services</a>
-                    </li> -->
-
-                    <!-- <li class="menu-li nav-item dropdown">
-                        <a class="menu-links nav-link dropdown-toggle <?php echo($this->uri->segment(1) == 'events') ? 'active-menu-link' :'' ?>"
-                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Events
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<?php echo base_url('events/manava-seva'); ?>">Manava
-                                    Seva</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('events/madhava-seva'); ?>">Madhava
-                                    Seva</a></li>
-                            <li class="parent menu-li"><a href="#">Recent Toys</a>
-                                <ul class="child">
-                                    <li><a href="#">Yoyo</a></li>
-                                    <li><a href="#">Doctor Kit</a></li>
-                                    <li class="parent"><a href="#">Fun Puzzle<span class="expand">»</span></a>
-                                        <ul class="child">
-                                            <li><a href="#" nowrap>Cards</a></li>
-                                            <li><a href="#" nowrap>Numbers</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Uno Cards</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li> -->
 
                     <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'services') ? 'active-menu-link' :'' ?>" href="#">Services</a>
                         <ul class="child">
                         <?php
-                        if (!empty($dynamic_sevas)) {
+                        if (!empty($dynamic_manava_seva)) {
                             ?>
-                            <li class="parent"><a href="#">Sevas<span class="expand">»</span></a>
+                            <li class="parent"><a href="#">Manava Seva<span class="expand">»</span></a>
                                 <ul class="child">
                                 <?php
-                                foreach ($dynamic_sevas as $key => $value) { 
+                                foreach ($dynamic_manava_seva as $key => $value) { 
+                                ?>
+                                    <li><a href="<?php echo base_url('services/sevas/'.$this->encrypt->encode($value->id)); ?>" nowrap><?php echo $value->page; ?></a></li>
+                                <?php } ?>
+                                </ul>
+                            </li>
+                        <?php } ?>
+
+                        <?php
+                        if (!empty($dynamic_madhava_seva)) {
+                            ?>
+                            <li class="parent"><a href="#">Manava Seva<span class="expand">»</span></a>
+                                <ul class="child">
+                                <?php
+                                foreach ($dynamic_madhava_seva as $key => $value) { 
                                 ?>
                                     <li><a href="<?php echo base_url('services/sevas/'.$this->encrypt->encode($value->id)); ?>" nowrap><?php echo $value->page; ?></a></li>
                                 <?php } ?>
@@ -74,6 +57,20 @@
                                 <ul class="child">
                                 <?php
                                 foreach ($dynamic_vedic as $key => $value) { 
+                                ?>
+                                    <li><a href="<?php echo base_url('services/vedic-rituals/'.$this->encrypt->encode($value->id)); ?>" nowrap><?php echo $value->page; ?></a></li>
+                                <?php } ?>
+                                </ul>
+                            </li>
+                        <?php } ?>
+
+                        <?php
+                        if (!empty($dynamic_activity)) {
+                            ?>
+                            <li class="parent"><a href="#">Activity<span class="expand">»</span></a>
+                                <ul class="child">
+                                <?php
+                                foreach ($dynamic_activity as $key => $value) { 
                                 ?>
                                     <li><a href="<?php echo base_url('services/vedic-rituals/'.$this->encrypt->encode($value->id)); ?>" nowrap><?php echo $value->page; ?></a></li>
                                 <?php } ?>

@@ -27,8 +27,10 @@ class Home extends CI_Controller {
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA";
         $data['banner'] = $this->home_model->getBanner();
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['gallery'] = $this->home_model->getGallery();
         $data['video'] = $this->home_model->getVideo();
         $data['user'] = $this->home_model->getUserData($this->session->userdata('user_id'));
@@ -40,8 +42,10 @@ class Home extends CI_Controller {
         $this->botdetectcaptcha->Reset();
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - About Us";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['hero_heading'] = "About Us";
         $this->load->view('home/about', $data);
     }
@@ -51,8 +55,10 @@ class Home extends CI_Controller {
         $this->botdetectcaptcha->Reset();
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - Sai Meru Mathi Trust";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['hero_heading'] = "Sai Meru Mathi Trust";
         $this->load->view('home/sai_meru_mathi', $data);
     }
@@ -62,8 +68,10 @@ class Home extends CI_Controller {
         $this->botdetectcaptcha->Reset();
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - Sai Mayee Trust";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['hero_heading'] = "Sai Mayee Trust";
         $this->load->view('home/sai_mayee', $data);
     }
@@ -85,8 +93,10 @@ class Home extends CI_Controller {
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - Services";
         $data['hero_heading'] = "Services";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $id = $this->encrypt->decode($id);
         $data['services'] = $this->home_model->getSignleService($id);
         $data['gallery'] = $this->home_model->getSignleServiceGallery($id);
@@ -127,8 +137,10 @@ class Home extends CI_Controller {
         $data['title'] = "HRUDAYASPANDANA - Events";
         $data['events'] = $this->home_model->getAllEvents($type);
         $data['hero_heading'] = "Events";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $this->load->view('home/events', $data);
     }
 
@@ -155,8 +167,10 @@ class Home extends CI_Controller {
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - Event";
         $data['hero_heading'] = "Event";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $id = $this->encrypt->decode($id);
         $data['event'] = $this->home_model->getSignleEvent($id);
         if(empty($id)){
@@ -235,8 +249,10 @@ class Home extends CI_Controller {
             $data['captchaHtml'] = $this->botdetectcaptcha->Html();
             $data['title'] = "HRUDAYASPANDANA - Donation";
             $data['hero_heading'] = "Donation";
-            $data['dynamic_sevas'] = $this->home_model->getSevas();
-            $data['dynamic_vedic'] = $this->home_model->getVedic();
+            $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
             $data['user'] = $this->home_model->getUserData($this->session->userdata('user_id'));
             $this->load->view('home/donation', $data);
         }
@@ -408,8 +424,10 @@ class Home extends CI_Controller {
             $data['captchaHtml'] = $this->botdetectcaptcha->Html();
             $data['title'] = "HRUDAYASPANDANA - e-Hundi";
             $data['hero_heading'] = "e-Hundi";
-            $data['dynamic_sevas'] = $this->home_model->getSevas();
-            $data['dynamic_vedic'] = $this->home_model->getVedic();
+            $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
             $data['user'] = $this->home_model->getUserData($this->session->userdata('user_id'));
             $this->load->view('home/hundi', $data);
         }
@@ -568,8 +586,10 @@ class Home extends CI_Controller {
             $data['captchaHtml'] = $this->botdetectcaptcha->Html();
             $data['title'] = "HRUDAYASPANDANA - Contact Us";
             $data['hero_heading'] = "Contact Us";
-            $data['dynamic_sevas'] = $this->home_model->getSevas();
-            $data['dynamic_vedic'] = $this->home_model->getVedic();
+            $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
             $data['user'] = $this->home_model->getUserData($this->session->userdata('user_id'));
             $this->load->view('home/contact', $data);
         }
@@ -580,8 +600,10 @@ class Home extends CI_Controller {
         $data['title'] = "HRUDAYASPANDANA - Literature";
         $data['hero_heading'] = "Literature";
         $data['literature'] = $this->home_model->getLiterature();
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $this->load->view('home/literature', $data);
     }
 
@@ -589,8 +611,10 @@ class Home extends CI_Controller {
 	{
         $data['title'] = "HRUDAYASPANDANA - Gallery";
         $data['hero_heading'] = "Gallery";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['gallery'] = $this->home_model->getAllGallery();
         $data['category'] = $this->home_model->getAllGalleryCategory();
         $category = $this->home_model->getAllGalleryCategory();
@@ -606,8 +630,10 @@ class Home extends CI_Controller {
 	{
         $data['title'] = "HRUDAYASPANDANA - Gallery";
         $data['hero_heading'] = "Gallery";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['gallery'] = $this->home_model->getAllGalleryVideos();
         $data['category'] = $this->home_model->getAllGalleryVideosCategory();
         $category = $this->home_model->getAllGalleryVideosCategory();
@@ -623,8 +649,10 @@ class Home extends CI_Controller {
 	{
         $data['title'] = "HRUDAYASPANDANA - Gallery";
         $data['hero_heading'] = "Gallery";
-        $data['dynamic_sevas'] = $this->home_model->getSevas();
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
         $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
         $data['gallery'] = $this->home_model->getAllGalleryAudios();
         $data['category'] = $this->home_model->getAllGalleryAudiosCategory();
         $category = $this->home_model->getAllGalleryAudiosCategory();
@@ -754,8 +782,10 @@ class Home extends CI_Controller {
 
             $data['title'] = "HRUDAYASPANDANA - Volunteer";
             $data['hero_heading'] = "Volunteer";
-            $data['dynamic_sevas'] = $this->home_model->getSevas();
+            $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+            $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
             $data['dynamic_vedic'] = $this->home_model->getVedic();
+            $data['dynamic_activity'] = $this->home_model->getActivity();
             $data['user'] = $this->home_model->getUserData($this->session->userdata('user_id'));
             $this->botdetectcaptcha->Reset();
             $data['captchaHtml'] = $this->botdetectcaptcha->Html();
@@ -796,12 +826,6 @@ class Home extends CI_Controller {
         $data['title'] = "HRUDAYASPANDANA - E-Hundi";
         $this->load->view('home/qr', $data);
     }
-
-    // public function pdf()
-	// {
-    //     $data['title'] = "HRUDAYASPANDANA - E-Hundi";
-    //     $this->load->view('home/pdf', $data);
-    // }
 
     public function pdf($id){
 
@@ -880,6 +904,45 @@ class Home extends CI_Controller {
         
    
        }
+
+        public function payment_data()
+        {
+            if ($this->session->userdata('user_id') == '') {
+                $this->session->set_flashdata('error','Oops.. unaccessible page!');
+                redirect('/');
+            }
+            $data['title'] = "HRUDAYASPANDANA - Payment";
+            $data['hero_heading'] = "Payment";
+            $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+            $data['result'] = $this->home_model->getPaymentData($this->session->userdata('user_id'));
+            $this->load->view('home/payment-data', $data);
+        }
+
+        public function payment_data_download($id='')
+        {
+
+            $this->load->library('pdf');
+        
+            $path = base_url().'assets/images/round-logo.png';
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $datanew = file_get_contents($path);
+            $path = base_url().'assets/images/signature.png';
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $datasign = file_get_contents($path);
+            
+            $data = array(
+                'info' => $this->home_model->get_payment_info($this->encrypt->decode($id)),
+                'base_image' => 'data:image/' . $type . ';base64,' . base64_encode($datanew),
+                'sign_image' => 'data:image/' . $type . ';base64,' . base64_encode($datasign),
+            );
+            
+            $this->pdf->load_view('pdf/pdf', $data);
+            $this->pdf->render();
+            $this->pdf->stream();
+        }
 
     public function captcha_validate($code)
     {  

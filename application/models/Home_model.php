@@ -92,6 +92,15 @@ class Home_model extends CI_Model {
         return $query->row();
 	}
 
+    public function getPaymentData($id)
+	{
+        $this->db->order_by('id', 'desc');
+        $this->db->where('user_id', $id);
+        $this->db->where('payment_status', 1);
+        $query = $this->db->get('donation');
+        return $query->result();
+	}
+
     public function getDonation($id)
 	{
         $this->db->where('id', $id);
@@ -167,12 +176,20 @@ class Home_model extends CI_Model {
         return $this->db->where('id',$id)->get('services')->row();
     }
 
-    public function getSevas(){
-        return $this->db->select('id, page')->where('type','sevas')->order_by('id','desc')->get('services')->result();
+    public function getManavaSeva(){
+        return $this->db->select('id, page')->where('type','manava-seva')->order_by('id','desc')->get('services')->result();
+    }
+
+    public function getMadhavaSeva(){
+        return $this->db->select('id, page')->where('type','madhava-seva')->order_by('id','desc')->get('services')->result();
     }
 
     public function getVedic(){
         return $this->db->select('id, page')->where('type','vedic-rituals')->order_by('id','desc')->get('services')->result();
+    }
+
+    public function getActivity(){
+        return $this->db->select('id, page')->where('type','activities')->order_by('id','desc')->get('services')->result();
     }
 
     public function getLiterature(){

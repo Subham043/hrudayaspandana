@@ -141,7 +141,24 @@ class Authentication extends CI_Controller {
             $data['madhava_count'] = $count['madhava'];
             $data['mayee_count'] = $count['mayee'];
             $data['meru_count'] = $count['meru'];
-          
+            $query = $this->db->query('select timestamp, year(timestamp) as year, month(timestamp) as month, sum(amount) as total_amount from donation  where payment_status = "1" and trust = "Sri Sai Meru Mathi Trust" group by year(timestamp), month(timestamp)');
+            $data['mathi_graph_label'] = [];
+            foreach($query->result() as $fields){
+                array_push($data['mathi_graph_label'],date('M',strtotime($fields->timestamp))."-".$fields->year);
+            }
+            $data['mathi_graph_data'] = [];
+            foreach($query->result() as $fields){
+                array_push($data['mathi_graph_data'],$fields->total_amount);
+            }
+            $query = $this->db->query('select timestamp, year(timestamp) as year, month(timestamp) as month, sum(amount) as total_amount from donation  where payment_status = "1" and trust = "Sai Mayee Trust" group by year(timestamp), month(timestamp)');
+            $data['mayee_graph_label'] = [];
+            foreach($query->result() as $fields){
+                array_push($data['mayee_graph_label'],date('M',strtotime($fields->timestamp))."-".$fields->year);
+            }
+            $data['mayee_graph_data'] = [];
+            foreach($query->result() as $fields){
+                array_push($data['mayee_graph_data'],$fields->total_amount);
+            }
             $this->load->view('pages/dashboard.php', $data);
         } else {
             $this->session->set_flashdata('error', 'Please login and try again');
@@ -264,6 +281,12 @@ class Authentication extends CI_Controller {
             $this->form_validation->set_message('captcha_validate', 'Please retype the characters from the image correctly.');
         }
         return $isHuman;
+    }
+
+    public function getordergraph()
+    {
+        $query = $this->db->query('select year(timestamp) as year, month(timestamp) as month, sum(amount) as total_amount from donation  where payment_status = "1" and trust = "Sri Sai Meru Mathi Trust" group by year(timestamp), month(timestamp)');
+        print_r($query->result());
     }
 
 }
