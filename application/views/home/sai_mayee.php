@@ -20,6 +20,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -45,7 +46,7 @@
                     </div> -->
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 first-about-img-div about-page-col trust-page-col-two">
-                    <img src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-4-copyright.jpg" alt="">
+                    <img  onContextMenu="return false;"  src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-4-copyright.jpg" alt="">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 about-page-col first-about-text-div trust-no-bottom-col trust-page-col-three">
                     <div class="heading">
@@ -118,7 +119,7 @@
                     </div> -->
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 first-about-img-div about-page-col trust-no-bottom-col  trust-page-col-four">
-                    <img src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-3-copyright.jpg" alt="">
+                    <img  onContextMenu="return false;"  src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-3-copyright.jpg" alt="">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 about-page-col first-about-text-div trust-page-col-six">
                     <div class="text">
@@ -220,6 +221,16 @@ tata.error('Error', '<?php echo $this->session->flashdata('error'); ?>', {
 
 <?php } ?>
 </script>
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 
 </html>

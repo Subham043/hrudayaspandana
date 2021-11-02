@@ -165,11 +165,15 @@ class Home_model extends CI_Model {
     }
 
     public function getAllEvents($type){
-        return $this->db->where('status',1)->where('type',$type)->order_by('id','desc')->get('events')->result();
+        return $this->db->where('status',$type)->order_by('id','desc')->get('events')->result();
+    }
+
+    public function getAllEventsFilter($type,$filter){
+        return $this->db->where('status',$type)->where('type',$filter)->order_by('id','desc')->get('events')->result();
     }
 
     public function getSignleEvent($id){
-        return $this->db->where('status',1)->where('id',$id)->get('events')->row();
+        return $this->db->where('id',$id)->get('events')->row();
     }
 
     public function getSignleService($id){

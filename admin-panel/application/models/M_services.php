@@ -165,6 +165,10 @@ class M_services extends CI_Model {
         }
     }
 
+    public function galleryGetByServiceId($id){
+        return  $this->db->where('service_id', $id)->order_by('id','desc')->get('gallery-audios')->result();
+    }
+
 }
 
 /* End of file M_adminuser.php */

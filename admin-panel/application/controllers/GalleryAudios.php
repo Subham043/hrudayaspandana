@@ -20,126 +20,119 @@ class GalleryAudios extends CI_Controller {
         header("Pragma: no-cache"); //HTTP 1.0
     }
 
-    public function view($type='')
-	{
+    public function index($type = null)
+    {
         $data['title']  = 'Gallery - Hrudayaspandana';
         switch ($type) {
-			case "madhava-seva":
-              $type= "Madhava Seva";
-              $data['type'] = "Madhava Seva";
-              $data['pagetype'] = "madhava-seva";
+			case "messages":
+              $type= "messages";
+              $data['type']= "messages";
+              $data['pagetype']= "Messages";
 			  break;
 
-			case "manava-seva":
-                $type= "Manava Seva";
-                $data['type'] = "Manava Seva";
-                $data['pagetype'] = "manava-seva";
+			case "guru-bhodha":
+                $type= "guru-bhodha";
+                $data['type']= "guru-bhodha";
+                $data['pagetype']= "Guru Bhodha";
 				break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
 				redirect('dashboard');
 		}
-        $this->load->view('pages/gallery/view-services-gallery-audios', $data);
+        $data['result'] = $this->m_galleryaudios->galleryGetByType($data['pagetype']);
+        $this->load->view('pages/audios/audios', $data);  
     }
 
-    public function galleryAudioUpload($type='')
-	{
-        $config['upload_path']          = '../assets/images/home/audio';
-        $config['allowed_types']        = 'wav|mp3|aac';                
-        $config['max_width']            = 0;
-        $config['encrypt_name']         = TRUE;
-        $this->load->library('upload', $config);
-        if(!is_dir($config['upload_path'])) mkdir($config['upload_path'], 0777, TRUE);
-        switch ($type) {
-			case "madhava-seva":
-              $type= "Madhava Seva";
-			  break;
-
-			case "manava-seva":
-                $type= "Manava Seva";
-				break;
-			
-			default:
-                $data['message'] = "type error";
-                echo json_encode($data);
-                die();
-                exit;
-		}
-        if ( ! $this->upload->do_upload('files'))
-        {
-            $data = array(
-                'success'=>false,
-                "error"=> substr($this->upload->display_errors(),3,-3),
-                "errorcode"=>'400'
-            );
-            echo json_encode($data);
-        }else{
-
-            $newdata = array(
-                'audio' => $this->upload->data('file_name'),
-                'category' => $type,
-            );
-            // echo json_encode($newdata);
-            // exit;
-            $application_id = $this->m_galleryaudios->insertHomeGalleryAudio($newdata);
-            if($application_id != false)
-            {
-                $data = array(
-                    'success'=>true
-                );
-            }else{
-                $data = array(
-                    'success'=>false,
-                    "error"=> 'Something went wrong, Please try again',
-                    "errorcode"=>'400'
-                );
-            }
-            echo json_encode($data);
-        }
-    }
-
-    public function galleryAudioView($type='')
-	{
-        switch ($type) {
-			case "madhava-seva":
-              $type= "Madhava Seva";
-			  break;
-
-			case "manava-seva":
-                $type= "Manava Seva";
-				break;
-			
-			default:
-                $data['message'] = "type error";
-                echo json_encode($data);
-                die();
-                exit;
-		}
-        $data['result']= $this->m_galleryaudios->galleryGetByType($type);
-        echo json_encode($data);
-    }
-
-    public function deleteGalleryAudio($id = '', $type='')
+    public function upload($type = null)
     {
-        // $id = $this->encryption_url->safe_b64decode($id);
         switch ($type) {
-			case "madhava-seva":
-              $type= "Madhava Seva";
-              $data['type'] = "Madhava Seva";
-              $data['pagetype'] = "madhava-seva";
-			  break;
-
-			case "manava-seva":
-                $type= "Manava Seva";
-                $data['type'] = "Manava Seva";
-                $data['pagetype'] = "manava-seva";
-				break;
+			case "messages":
+                $type= "messages";
+                $data['type']= "messages";
+                $data['pagetype']= "Messages";
+                break;
+  
+              case "guru-bhodha":
+                  $type= "guru-bhodha";
+                  $data['type']= "guru-bhodha";
+                  $data['pagetype']= "Guru Bhodha";
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
 				redirect('dashboard');
 		}
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Title', 'trim|required');
+        $this->form_validation->set_rules('description', 'Description', 'trim|required');
+        
+        if($this->form_validation->run()) 
+		{
+                $config['upload_path']          = '../assets/images/home/audio';
+                $config['allowed_types']        = 'wav|mp3|aac';                
+                $config['max_width']            = 0;
+                $config['encrypt_name']         = TRUE;
+                $this->load->library('upload', $config);
+                if(!is_dir($config['upload_path'])) mkdir($config['upload_path'], 0777, TRUE);
+
+                if ( ! $this->upload->do_upload('image'))
+                {
+                    $this->session->set_flashdata('error',$this->upload->display_errors());
+                    $data['title']  = 'Gallery - Hrudayaspandana';
+                    $this->load->view('pages/audios/add', $data);
+                }else{
+
+                    $title 	= $this->input->post('title');
+                    $description 	= $this->input->post('description');
+                    $image = $this->upload->data('file_name');
+
+                    $data = array(
+                        'title'  => $title,  
+                        'description'  => $description,  
+                        'audio'  => $image,  
+                        'category'  => $data['pagetype'],   
+                    );
+                    $data = html_escape($this->security->xss_clean($data));
+                    $application_id = $this->m_galleryaudios->insertHomeGalleryAudio($data);
+                    if($application_id != false)
+                    {
+                        $this->session->set_flashdata('success','Audio Stored');
+                        redirect('gallery-audios/'.$type);
+                        
+                    }else{
+                        $this->session->set_flashdata('error','Some error occured please try again');
+                        redirect('gallery-audio/upload/'.$type);
+                    }
+                }
+        }else{
+            $data['title']  = 'Gallery - Hrudayaspandana';
+            $this->load->view('pages/audios/add', $data);
+        }    
+    }
+
+    public function delete($id = '', $type='')
+    {
+        switch ($type) {
+			case "messages":
+                $type= "messages";
+                $data['type']= "messages";
+                $data['pagetype']= "Messages";
+                break;
+  
+              case "guru-bhodha":
+                  $type= "guru-bhodha";
+                  $data['type']= "guru-bhodha";
+                  $data['pagetype']= "Guru Bhodha";
+                  break;
+			
+			default:
+				$this->session->set_flashdata('error','Invalid Page');
+				redirect('dashboard');
+		}
+
+        $id = $this->encryption_url->safe_b64decode($id);
         $audioResult = $this->m_galleryaudios->getHomeGalleryAudio($id);
         $application_id = $this->m_galleryaudios->deleteHomeGalleryAudio($id);
         if($application_id != false)
@@ -147,11 +140,11 @@ class GalleryAudios extends CI_Controller {
             $path = '../assets/images/home/audio/'.$audioResult->audio;
             unlink($path);
             $this->session->set_flashdata('success','Audio Deleted');
-            redirect('gallery-audios/'.$data['pagetype']);
+            redirect('gallery-audios/'.$type);
             
         }else{
             $this->session->set_flashdata('error','Some error occured please try again');
-            redirect('gallery-audios/'.$data['pagetype']);
+            redirect('gallery-audios/'.$type);
         }
     }
   

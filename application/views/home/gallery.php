@@ -35,6 +35,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -67,7 +68,7 @@
                     <li data-liquo="<?php echo array_search($value->category, $category_name); ?>">
                         <a href="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>"
                             class="thumbnail img-thumbnail" data-liquo="<?php echo $value->category;?>">
-                            <img alt=".."
+                            <img  onContextMenu="return false;"  alt=".."
                                 src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
                         </a>
                     </li>
@@ -132,5 +133,15 @@ $("#gallery").liquo({
     start: "all"
 });
 </script>
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 </html>

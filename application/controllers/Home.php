@@ -116,17 +116,17 @@ class Home extends CI_Controller {
     public function events($type)
 	{
         switch ($type) {
-			case "manava-seva":
-              $type= "manava-seva";
-              $data['hero_head_type'] = 'Manava Seva';
-              $data['type'] = 'manava-seva';
-			  break;
-
-			case "madhava-seva":
-                $type= "madhava-seva";
-                $data['hero_head_type'] = 'Madhava Seva';
-                $data['type'] = 'madhava-seva';
-				break;
+			case "past-events":
+                $type= "2";
+                $data['hero_head_type'] = 'Past Events';
+                $data['type'] = 'past-events';
+                break;
+  
+              case "upcoming-events":
+                  $type= "1";
+                  $data['hero_head_type'] = 'Upcoming Events';
+                  $data['type'] = 'upcoming-events';
+                  break;
 			
 			default:
 				$this->session->set_flashdata('error','Invalid Page');
@@ -135,7 +135,23 @@ class Home extends CI_Controller {
         $this->botdetectcaptcha->Reset();
         $data['captchaHtml'] = $this->botdetectcaptcha->Html();
         $data['title'] = "HRUDAYASPANDANA - Events";
-        $data['events'] = $this->home_model->getAllEvents($type);
+        $filter = $this->input->get('filter');
+        if(!empty($filter)){
+            switch ($filter) {
+                case "madhava-seva":
+                    $data['events'] = $this->home_model->getAllEventsFilter($type,"madhava-seva");
+                  break;
+    
+                case "manava-seva":
+                    $data['events'] = $this->home_model->getAllEventsFilter($type,"manava-seva");
+                    break;
+                
+                default:
+                    $data['events'] = $this->home_model->getAllEvents($type);
+            }
+        }else{
+            $data['events'] = $this->home_model->getAllEvents($type);
+        }
         $data['hero_heading'] = "Events";
         $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
         $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
@@ -147,16 +163,16 @@ class Home extends CI_Controller {
     public function event_detail($type='',$id='')
 	{
         switch ($type) {
-			case "manava-seva":
-              $type= "manava-seva";
-              $data['hero_head_type'] = 'Manava Seva';
-              $data['type'] = 'manava-seva';
+			case "past-events":
+              $type= "1";
+              $data['hero_head_type'] = 'Past Events';
+              $data['type'] = 'past-events';
 			  break;
 
-			case "madhava-seva":
-                $type= "madhava-seva";
-                $data['hero_head_type'] = 'Madhava Seva';
-                $data['type'] = 'madhava-seva';
+			case "upcoming-events":
+                $type= "2";
+                $data['hero_head_type'] = 'Upcoming Events';
+                $data['type'] = 'upcoming-events';
 				break;
 			
 			default:

@@ -50,7 +50,7 @@ class Authentication extends CI_Controller {
                     $session_data = array('user_id' => $user->id);
                     $this->session->set_userdata($session_data);
                     $this->session->set_flashdata('success','logged in');
-                    redirect('login');
+                    redirect('/');
                 }else{
                     $this->session->set_flashdata('error','Invalid Password');
                     redirect('login');

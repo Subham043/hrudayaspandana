@@ -63,10 +63,10 @@
             <ul class="collapsible men-lft">
                 <li class="si-m si-gm">
 <div class="collapsible-header"><i class="fas fa-music li-icon"></i>Gallery - Audios</div>
-                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-audios/madhava-seva"
-                                class="<?php echo ($this->uri->segment(2) == 'madhava-seva') ? 'active' : '' ?>">Madhava Seva</a></span></div>
-                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-audios/manava-seva"
-                                class="<?php echo ($this->uri->segment(2) == 'manava-seva') ? 'active' : '' ?>">Manava Seva</a></span></div>
+                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-audios/messages"
+                                class="<?php echo ($this->uri->segment(2) == 'messages') ? 'active' : '' ?>">Messages</a></span></div>
+                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-audios/guru-bhodha"
+                                class="<?php echo ($this->uri->segment(2) == 'guru-bhodha') ? 'active' : '' ?>">Guru Bhodha</a></span></div>
                 </li>
             </ul>
             <!-- <li><a class="<?php echo $this->uri->segment(1) == 'events'?'active':'' ?>"

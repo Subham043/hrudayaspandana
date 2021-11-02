@@ -18,15 +18,79 @@
     <!-- Captcha CSS -->
     <link type="text/css" rel="Stylesheet" href="<?php echo CaptchaUrls::LayoutStylesheetUrl() ?>" />
     <style>
-        .img-thumbnail {
+    .img-thumbnail {
         background-color: transparent !important;
         border: 1px solid transparent !important;
         text-align: center;
+    }
+    .audio-thumbnail {
+        border: 1px solid transparent !important;
+        text-align: center;
+        background-image: linear-gradient(rgba(255, 170, 73, 0.5), rgba(255, 170, 73, 1)), url("<?php echo base_url(); ?>assets/images/logo.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .audio-description {
+        height: 150px;
+        max-height: 150px;
+        overflow-y: auto;
+        margin-bottom: 5px;
+    }
+
+    .audio-description::-webkit-scrollbar {
+        width: 11px;
+    }
+
+    .audio-description {
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
+
+    .audio-description::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
+    }
+
+    .audio-description::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbarBG);
+    }
+
+    .audio-description .description {
+        text-align: left;
+        color: #000;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .audio-title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .audio-title .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #c53f93;
+        text-transform: uppercase;
+    }
+
+    .audio-title .time-stamp {
+        font-size: 17px;
+        font-weight: bold;
+        color: #747070;
     }
     </style>
 </head>
 
 <body>
+    <?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -47,7 +111,8 @@
                 </div>
                 <div
                     class="col-lg-6 col-md-12 col-sm-12 first-about-img-div about-page-col service-content-col service-content-col2">
-                    <img src="<?php echo base_url('assets/images/services/'.$services->image1); ?>" alt="">
+                    <img onContextMenu="return false;"
+                        src="<?php echo base_url('assets/images/services/'.$services->image1); ?>" alt="">
                 </div>
                 <div
                     class="col-lg-12 col-md-12 col-sm-12 about-page-col first-about-text-div service-page-col service-content-col3">
@@ -58,7 +123,8 @@
                 <?php if($services->title2!=null && $services->heading2!=null && $services->description3!=null){ ?>
                 <div
                     class="col-lg-6 col-md-12 col-sm-12 second-about-img-div about-page-col service-content-col service-content-col5">
-                    <img src="<?php echo base_url('assets/images/services/'.$services->image2); ?>" alt="">
+                    <img onContextMenu="return false;"
+                        src="<?php echo base_url('assets/images/services/'.$services->image2); ?>" alt="">
                 </div>
                 <div
                     class="col-lg-6 col-md-12 col-sm-12 third-about-text-div about-page-col service-content-col service-content-col4">
@@ -96,7 +162,8 @@
             <?php foreach ($gallery as $key => $value) { $count = $count+1; ?>
             <a href="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>"
                 class="thumbnail img-thumbnail">
-                <img alt=".." src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
+                <img onContextMenu="return false;" alt=".."
+                    src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
             </a>
             <?php } ?>
 
@@ -150,8 +217,18 @@
         </div>
         <div class="gallery-box">
             <?php foreach ($audios as $key => $value) { $count = $count+1; ?>
-            <a href="#!" class="thumbnail img-thumbnail">
-                <audio controls>
+            <a href="#!" class="thumbnail img-thumbnail audio-thumbnail" style="text-decoration:none;">
+                <div class="audio-title">
+                    <p class="title"><?php echo $value->title;?></p>
+                    <p class="time-stamp"><?php echo date('d', strtotime($value->timestamp)); ?>-
+                        <?php echo date('M', strtotime($value->timestamp)); ?>-
+                        <?php echo date('Y', strtotime($value->timestamp)); ?></p>
+                </div>
+                <div class="audio-description">
+                    <p class="description"><?php echo $value->description;?></p>
+                </div>
+
+                <audio controls style="width: 100%;">
                     <source src="<?php echo base_url('assets/images/home/audio/'.$value->audio); ?>"
                         type="audio/<?php echo substr($value->audio, strpos($value->audio, ".") + 1) ; ?>">
                     Your browser does not support the audio element.
@@ -210,6 +287,17 @@ $('.thumbnail').viewbox({
     nextOnContentClick: true,
     useGestures: true,
     imageExt: ['png', 'jpg', 'jpeg', 'webp', 'gif']
+});
+</script>
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
 });
 </script>
 

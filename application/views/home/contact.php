@@ -20,6 +20,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -36,7 +37,7 @@
 
 
                     <div class="event-row-image contact-event-one">
-                        <!-- <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
+                        <!-- <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7898513320256!2d77.51846671482146!3d12.921224090888943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f011f2bf73f%3A0xad514ba017f39891!2sJurysoft!5e0!3m2!1sen!2sin!4v1631520547292!5m2!1sen!2sin"
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -71,7 +72,7 @@
                         <div class="line"></div>
                     </div>
                     <div class="event-row-image contact-event-three">
-                        <!-- <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
+                        <!-- <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7898513320256!2d77.51846671482146!3d12.921224090888943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f011f2bf73f%3A0xad514ba017f39891!2sJurysoft!5e0!3m2!1sen!2sin!4v1631520547292!5m2!1sen!2sin"
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -80,7 +81,7 @@
 
 
                     <!-- <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                     </div>
                     <div class="event-row-line event-row-five">
                         <div class="line"></div>
@@ -306,7 +307,17 @@ $("#contactForm").validate({
 });
 </script>
 
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 
 
 </html>

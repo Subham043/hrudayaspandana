@@ -58,10 +58,9 @@ $route['gallery/images/upload/(:any)']  	= 'Gallery/galleryUpload/$1';
 $route['gallery/images/view/(:any)']  	= 'Gallery/galleryView/$1';
 $route['gallery/images/delete/(:any)/(:any)']  	= 'Gallery/deleteGalleryImage/$1/$2';
 
-$route['gallery-audios/(:any)']  	= 'GalleryAudios/view/$1';
-$route['gallery-audios/upload/(:any)']  	= 'GalleryAudios/galleryAudioUpload/$1';
-$route['gallery-audios/view/(:any)']  	= 'GalleryAudios/galleryAudioView/$1';
-$route['gallery-audios/delete/(:any)/(:any)']  	= 'GalleryAudios/deleteGalleryAudio/$1/$2';
+$route['gallery-audios/(:any)']  	= 'GalleryAudios/index/$1';
+$route['gallery-audio/upload/(:any)']  	= 'GalleryAudios/upload/$1';
+$route['gallery-audios/delete/(:any)/(:any)']  	= 'GalleryAudios/delete/$1/$2';
 
 $route['gallery-videos/(:any)']  	= 'GalleryVideos/index/$1';
 $route['gallery-videos/upload/(:any)']  	= 'GalleryVideos/upload/$1';
@@ -93,15 +92,16 @@ $route['services/new/add']  	= 'Services/add';
 $route['services/new/gallery/images/(:any)']  	= 'Services/galleryUpload/$1';
 $route['services/new/gallery/images/view/(:any)']  	= 'Services/galleryView/$1';
 $route['services/new/gallery/images/delete/(:any)']  	= 'Services/deleteGalleryImage/$1';
-$route['services/new/gallery/audio/(:any)']  	= 'Services/galleryAudioUpload/$1';
-$route['services/new/gallery/audio/view/(:any)']  	= 'Services/galleryAudioView/$1';
-$route['services/new/gallery/audio/delete/(:any)']  	= 'Services/deleteGalleryAudio/$1';
+$route['services/new/gallery/audio/(:any)/(:any)']  	= 'Services/galleryAudioUpload/$1/$2';
+$route['services/new/gallery/new/audio/delete/(:any)']  	= 'Services/deleteGalleryAudio/$1';
 $route['services/view/(:any)/(:any)']  	= 'Services/view/$1/$2';
 $route['services/gallery/(:any)/(:any)']  	= 'Services/gallery/$1/$2';
 $route['services/audio/(:any)/(:any)']  	= 'Services/audio/$1/$2';
 $route['services/videos/(:any)/(:any)']  	= 'Services/videos/$1/$2';
 $route['services/videos/delete/(:any)/(:any)']  	= 'Services/videos_delete/$1/$2';
 $route['services/delete/(:any)/(:any)']  	= 'Services/delete/$1/$2';
+
+
 
 
 

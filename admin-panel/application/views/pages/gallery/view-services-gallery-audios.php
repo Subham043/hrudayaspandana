@@ -204,7 +204,7 @@ $this->load->library('encryption');
                                             action="<?php echo base_url('gallery-audios/upload/'.$pagetype); ?>"
                                             method="post" enctype="multipart/form-data">
                                             <input id="demo" type="file" name="files"
-                                                accept=".mp3, .aac, .wav, audio/mp3, audio/aac, audio/wav" multiple>
+                                                accept=".mp3, .aac, .wav, audio/mp3, audio/aac, audio/wav">
                                         </form>
                                     </div>
                                 </fieldset>
@@ -291,7 +291,7 @@ $this->load->library('encryption');
             'edit': false,
             'retries': 0,
             uploadcompleted: function(e, data) {
-                // data.ff_info.RemoveFile();
+                data.ff_info.RemoveFile();
                 getImage()
             }
 

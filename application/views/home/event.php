@@ -20,6 +20,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -50,7 +51,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12 img_div">
-                        <img src="<?php echo base_url(); ?>assets/images/events/<?php echo $event->image; ?>" alt="">
+                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/events/<?php echo $event->image; ?>" alt="">
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 paragraph_div">
@@ -95,6 +96,16 @@ tata.error('Error', '<?php echo $this->session->flashdata('error'); ?>', {
 
 <?php } ?>
 </script>
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 
 </html>

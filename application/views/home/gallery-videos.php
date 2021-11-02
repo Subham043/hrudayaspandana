@@ -35,6 +35,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>

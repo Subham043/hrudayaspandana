@@ -148,7 +148,7 @@
     <section class="payment">
         <div class="main-div-payment">
             <div class="img-div">
-                <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="" class="logo-img">
+                <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/logo.png" alt="" class="logo-img">
             </div>
 
 
@@ -173,7 +173,7 @@
             </div>
 
             <div class="success-div" id="success_div" style="display: none">
-                <img src="<?php echo base_url(); ?>assets/images/tick.gif" alt=""><br>
+                <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/tick.gif" alt=""><br>
                 <p>Payment Successfull!</p>
                 <a href="<?php echo base_url(); ?>">Continue to Home Page</a>
             </div>

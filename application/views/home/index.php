@@ -21,6 +21,7 @@
     .error {
         color: red !important;
     }
+
     .viewMoreBtn {
         background: transparent !important;
         border: none !important;
@@ -33,7 +34,7 @@
         text-decoration: underline;
     }
 
-    .tata{
+    .tata {
         z-index: 99999999 !important;
     }
 
@@ -44,6 +45,7 @@
 </head>
 
 <body>
+    <?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <section class="banner">
@@ -59,7 +61,8 @@
                     ?>
                     <div class="slider-hover-div">
                         <div class="slider-div-image">
-                            <img src="<?php echo base_url(); ?>assets/images/home/banner/<?php echo $value->image; ?>"
+                            <img onContextMenu="return false;"
+                                src="<?php echo base_url(); ?>assets/images/home/banner/<?php echo $value->image; ?>"
                                 alt="">
                             <div class="slider-image-overlay"></div>
                         </div>
@@ -99,7 +102,8 @@
             <div class="about-row">
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img src="https://cdn.pixabay.com/photo/2020/01/16/08/17/rishikesh-4769868_960_720.jpg" alt=""
+                        <img onContextMenu="return false;"
+                            src="https://cdn.pixabay.com/photo/2020/01/16/08/17/rishikesh-4769868_960_720.jpg" alt=""
                             class="about-card-img">
                         <h4>Ashram</h4>
                         <p>A spiritual hermitage in green valleys of the mountains where you can see millions of stars
@@ -108,7 +112,8 @@
                 </div>
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img src="https://cdn.pixabay.com/photo/2014/09/20/05/17/buddhists-453393_960_720.jpg" alt=""
+                        <img onContextMenu="return false;"
+                            src="https://cdn.pixabay.com/photo/2014/09/20/05/17/buddhists-453393_960_720.jpg" alt=""
                             class="about-card-img">
                         <h4>Get Involved</h4>
                         <p>Our community is actively involved in the life of locals that require humanitarian support on
@@ -117,7 +122,8 @@
                 </div>
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img src="https://cdn.pixabay.com/photo/2014/09/20/04/04/buddhists-453317_960_720.jpg" alt=""
+                        <img onContextMenu="return false;"
+                            src="https://cdn.pixabay.com/photo/2014/09/20/04/04/buddhists-453317_960_720.jpg" alt=""
                             class="about-card-img">
                         <h4>Donation</h4>
                         <p>We appreciate your contribution to the donation programs and will happily accept any help we
@@ -167,7 +173,7 @@
                                     <input type="text" id="lname_donation" name="lname"
                                         class="form-control form-donation-input" placeholder="Last Name"
                                         value="<?php echo $this->session->userdata('user_id') == '' ? set_value('lname') : $user->lname; ?>">
-                                        <div id="donationLNameError" style="color:red;font-style:italic;"></div>
+                                    <div id="donationLNameError" style="color:red;font-style:italic;"></div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +183,7 @@
                                     <input type="text" id="phone_donation" name="phone"
                                         class="form-control form-donation-input" placeholder="Phone Number"
                                         value="<?php echo $this->session->userdata('user_id') == '' ? set_value('phone') : $user->phone; ?>">
-                                        <div id="donationPhoneError" style="color:red;font-style:italic;"></div>
+                                    <div id="donationPhoneError" style="color:red;font-style:italic;"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -185,7 +191,7 @@
                                     <input type="email" id="email_donation" name="email"
                                         class="form-control form-donation-input" placeholder="Email"
                                         value="<?php echo $this->session->userdata('user_id') == '' ? set_value('email') : $user->email; ?>">
-                                        <div id="donationEmailError" style="color:red;font-style:italic;"></div>
+                                    <div id="donationEmailError" style="color:red;font-style:italic;"></div>
                                 </div>
                             </div>
                         </div>
@@ -195,14 +201,14 @@
                                     <input type="text" id="city_donation" name="city"
                                         class="form-control form-donation-input" placeholder="City"
                                         value="<?php echo set_value('city'); ?>">
-                                        <div id="donationCityError" style="color:red;font-style:italic;"></div>
+                                    <div id="donationCityError" style="color:red;font-style:italic;"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <input type="text" id="state" name="state" class="form-control form-donation-input"
                                         placeholder="State" value="<?php echo set_value('state'); ?>">
-                                        <div id="donationStateError" style="color:red;font-style:italic;"></div>
+                                    <div id="donationStateError" style="color:red;font-style:italic;"></div>
                                 </div>
                             </div>
                         </div>
@@ -226,29 +232,30 @@
                         <div class="mb-3" id="pan_div" style="display: none;">
                             <input type="text" id="pan" name="pan" class="form-control form-donation-input"
                                 placeholder="PAN No." value="<?php echo set_value('pan'); ?>">
-                                <div id="donationPanError" style="color:red;font-style:italic;"></div>
+                            <div id="donationPanError" style="color:red;font-style:italic;"></div>
                         </div>
                         <div class="mb-3">
                             <input type="text" id="amount" name="amount" class="form-control form-donation-input"
                                 placeholder="Amount" value="<?php echo set_value('amount'); ?>">
-                                <div id="donationAmountError" style="color:red;font-style:italic;"></div>
+                            <div id="donationAmountError" style="color:red;font-style:italic;"></div>
                         </div>
                         <div class="mb-3">
                             <?php  echo $captchaHtml;    ?>
                             <input id="captcha" type="text" name="captcha" value=""
                                 class="form-control form-donation-input  mt-2" required
                                 placeholder="Enter the text from above image" />
-                                <div id="donationCaptchaError" style="color:red;font-style:italic;"></div>
+                            <div id="donationCaptchaError" style="color:red;font-style:italic;"></div>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" id="check_donation" name="check"
                                 class="form-check-input  form-donation-checkbox">
                             <label class="form-check-label" for="check_donation">I agree that my submitted data is being
                                 collected and stored.</label>
-                                <div id="donationCheckError" style="color:red;font-style:italic;"></div>
+                            <div id="donationCheckError" style="color:red;font-style:italic;"></div>
                         </div>
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary  form-donation-submit" id="donationSubmit">Donate Now</button>
+                            <button type="submit" class="btn btn-primary  form-donation-submit"
+                                id="donationSubmit">Donate Now</button>
                         </div>
                     </form>
                 </div>
@@ -267,21 +274,24 @@
                         <div class="col-lg-4">
                             <div>
                                 <input type="text" class="form-control form-donation-input" id="subscribeName"
-                                    name="name" placeholder="Name" value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribeName') : $user->fname.' '.$user->lname ; ?>">
+                                    name="name" placeholder="Name"
+                                    value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribeName') : $user->fname.' '.$user->lname ; ?>">
                                 <div id="subscribeNameError" style="color:red;font-style:italic;"></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div>
                                 <input type="text" class="form-control form-donation-input" id="subscribePhone"
-                                    name="phone" placeholder="Mobile" value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribePhone') : $user->phone ; ?>">
+                                    name="phone" placeholder="Mobile"
+                                    value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribePhone') : $user->phone ; ?>">
                                 <div id="subscribePhoneError" style="color:red;font-style:italic;"></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div>
                                 <input type="text" class="form-control form-donation-input" id="subscribeEmail"
-                                    name="email" placeholder="Email" value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribeEmail') : $user->email ; ?>">
+                                    name="email" placeholder="Email"
+                                    value="<?php echo$this->session->userdata('user_id') == '' ? set_value('subscribeEmail') : $user->email ; ?>">
                                 <div id="subscribeEmailError" style="color:red;font-style:italic;"></div>
                             </div>
                         </div>
@@ -296,8 +306,8 @@
                         <input type="checkbox" class="form-check-input  form-donation-checkbox" value="newsletter"
                             id="newsletter" name="newsletter">
                         <label class="form-check-label" for="newsletter">Newsletter</label>
-                        <input type="checkbox" class="form-check-input  form-donation-checkbox" value="blog"
-                            id="blog" name="blog">
+                        <input type="checkbox" class="form-check-input  form-donation-checkbox" value="blog" id="blog"
+                            name="blog">
                         <label class="form-check-label" for="blog">Blog</label>
                         <div id="subscribeSubscriptionError" style="color:red;font-style:italic;text-align:center;">
                         </div>
@@ -325,7 +335,7 @@
                     ?>
 
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[0]->image; ?>"
+                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[0]->image; ?>"
                             alt="">
                     </div>
                     <div class="event-row-line event-row-one">
@@ -352,7 +362,7 @@
                         <div class="line"></div>
                     </div>
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[1]->image; ?>"
+                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[1]->image; ?>"
                             alt="">
                     </div>
 
@@ -363,7 +373,7 @@
                         ?>
 
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[2]->image; ?>"
+                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/events/<?php echo $events[2]->image; ?>"
                             alt="">
                     </div>
                     <div class="event-row-line event-row-five">
@@ -407,10 +417,10 @@
                                 <a href="#" class="blog-link">Read More</a>
                             </div>
                             <div class="col-blog-2 blog-right-image">
-                                <img src="assets/images/pray.jpg" alt="">
+                                <img  onContextMenu="return false;"  src="assets/images/pray.jpg" alt="">
                             </div>
                             <div class="col-blog-2 blog-left-image">
-                                <img src="assets/images/pray.jpg" alt="">
+                                <img  onContextMenu="return false;"  src="assets/images/pray.jpg" alt="">
                             </div>
                             <div class="col-blog-2 blog-right-text">
                                 <p class="blog-time">Wednesday, March 25, 2015</p>
@@ -427,7 +437,8 @@
                         <div class="blog-single-inner-row">
                             <a href="<?php echo base_url('events/manava-seva'); ?>" class="blog-link">
                                 <div class="col-blog-2 blog-img-bottom">
-                                    <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                                    <img onContextMenu="return false;"
+                                        src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                                 </div>
                                 <div class="col-blog-2 blog-text-top">
                                     <!-- <p class="blog-time">Wednesday, March 25, 2015</p> -->
@@ -447,7 +458,8 @@
                     <div class="col-lg-5 blog-main-single">
                         <a href="<?php echo base_url('events/madhava-seva'); ?>" class="blog-link">
                             <div class="col-blog-2 blog-img-bottom">
-                                <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                                <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/pray.jpg"
+                                    alt="">
                             </div>
                             <div class="blog-single-inner-row">
                                 <div class="col-blog-2 blog-text-top">
@@ -497,7 +509,8 @@
             <?php foreach ($gallery as $key => $value) { $count = $count+1; ?>
             <a href="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>"
                 class="thumbnail img-thumbnail">
-                <img alt=".." src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
+                <img onContextMenu="return false;" alt=".."
+                    src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
             </a>
             <?php } ?>
 
@@ -544,10 +557,10 @@
                                 <a href="#" class="blog-link">Read More</a>
                             </div>
                             <div class="col-blog-2 blog-right-image">
-                                <img src="assets/images/pray.jpg" alt="">
+                                <img  onContextMenu="return false;"  src="assets/images/pray.jpg" alt="">
                             </div>
                             <div class="col-blog-2 blog-left-image">
-                                <img src="assets/images/pray.jpg" alt="">
+                                <img  onContextMenu="return false;"  src="assets/images/pray.jpg" alt="">
                             </div>
                             <div class="col-blog-2 blog-right-text">
                                 <p class="blog-time">Wednesday, March 25, 2015</p>
@@ -573,7 +586,7 @@
                                 <a href="#" class="blog-link">Read More</a>
                             </div>
                             <div class="col-blog-2 blog-img-bottom">
-                                <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                                <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -594,7 +607,7 @@
 
 
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                     </div>
                     <div class="event-row-line event-row-one">
                         <div class="line"></div>
@@ -626,13 +639,13 @@
                         <div class="line"></div>
                     </div>
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                     </div>
 
 
 
                     <div class="event-row-image">
-                        <img src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
                     </div>
                     <div class="event-row-line event-row-five">
                         <div class="line"></div>
@@ -730,6 +743,18 @@
 <script src="<?php echo base_url(); ?>assets/js/tata.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/navbar.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jquery.validate.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 
 <script type="text/javascript">
 $(".regular").slick({
@@ -1082,7 +1107,7 @@ $("#donationForm").validate({
                             animate: 'slide',
                         })
                     $('.BDC_ReloadIcon').click();
-                    window.location.replace('<?php echo base_url(); ?>'+response.url);
+                    window.location.replace('<?php echo base_url(); ?>' + response.url);
                 } else {
                     tata.error('Error',
                         response.msg, {

@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -28,12 +29,25 @@
         <div class="wrapper">
             <div class="heading">
                 <p class="upper-heading">Events</p>
-                <h4 class="lower-heading"><?php echo $hero_head_type ?> Events</h4>
+                <h4 class="lower-heading"><?php echo $hero_head_type ?></h4>
             </div>
             <div class="events-page-main-div">
                 <div class="events-page-inner-div">
+                    <div style="text-align:right;">
+                        <p style="display: inline-block;margin:0;text-align:right;">
+                            <select id="table_filter"
+                                style="border-color: #ffaa49;border-radius: 5px;background: rgba(255, 170, 73, 0.5);color: white; margin-bottom: 10px; padding: 5px 10px;outline:none;">
+                                <option value="">Select Filter</option>
+                                <option value="all" <?php echo $this->input->get('filter')=="all" ? "selected": "" ?> >All <?php echo $hero_head_type ?></option>
+                                <option value="madhava-seva" <?php echo $this->input->get('filter')=="madhava-seva" ? "selected": "" ?> >Madhava Seva</option>
+                                <option value="manava-seva" <?php echo $this->input->get('filter')=="manava-seva" ? "selected": "" ?> >Manava Seva</option>
+                            </select>
+                        </p>
+                    </div>
+
                     <div class="time-div">
                         <!-- <h6>September 2021</h6> -->
+
                         <div class="line"></div>
                     </div>
 
@@ -48,20 +62,30 @@
                             <h6><?php echo date('d', strtotime($value->sdate)); ?></h6>
                         </div>
                         <div class="content-col">
-                            <h6> <?php echo date('d', strtotime($value->sdate)); ?> <?php echo date('M', strtotime($value->sdate)); ?> <?php echo date('Y', strtotime($value->sdate)); ?> @ <?php echo date('h:i A', strtotime($value->stime)); ?> - <?php echo date('d', strtotime($value->edate)); ?> <?php echo date('M', strtotime($value->edate)); ?> <?php echo date('Y', strtotime($value->edate)); ?> @ <?php echo date('h:i A', strtotime($value->etime)); ?>	</h6>
-                            <h4 style="text-transform: uppercase"><a href="<?php echo base_url('events/'.$type.'/'.$this->encrypt->encode($value->id)); ?>"><?php echo $value->name; ?></a></h4>
+                            <h6> <?php echo date('d', strtotime($value->sdate)); ?>
+                                <?php echo date('M', strtotime($value->sdate)); ?>
+                                <?php echo date('Y', strtotime($value->sdate)); ?> @
+                                <?php echo date('h:i A', strtotime($value->stime)); ?> -
+                                <?php echo date('d', strtotime($value->edate)); ?>
+                                <?php echo date('M', strtotime($value->edate)); ?>
+                                <?php echo date('Y', strtotime($value->edate)); ?> @
+                                <?php echo date('h:i A', strtotime($value->etime)); ?> </h6>
+                            <h4 style="text-transform: uppercase"><a
+                                    href="<?php echo base_url('events/'.$type.'/'.$this->encrypt->encode($value->id)); ?>"><?php echo $value->name; ?></a>
+                            </h4>
                             <p><?php echo substr($value->description1,0,300); ?>....</p>
                         </div>
                         <div class="img-col">
-                            <img src="<?php echo base_url(); ?>assets/images/events/<?php echo $value->image; ?>" alt="">
+                            <img onContextMenu="return false;"
+                                src="<?php echo base_url(); ?>assets/images/events/<?php echo $value->image; ?>" alt="">
                         </div>
                     </div>
-                    
+
                     <?php } } ?>
 
                 </div>
 
-                
+
             </div>
         </div>
     </section>
@@ -93,6 +117,22 @@ tata.error('Error', '<?php echo $this->session->flashdata('error'); ?>', {
 
 <?php } ?>
 </script>
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+$('#table_filter').on('change', function() {
+    if ($(this).val() != "") {
+        window.location.replace('<?php echo base_url().'events/'.$type.'?filter='; ?>' + $(this)
+            .val());
+    }
+});
+</script>
 
 </html>

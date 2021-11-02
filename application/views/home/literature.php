@@ -20,6 +20,7 @@
 </head>
 
 <body>
+<?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -35,7 +36,7 @@
                 ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-literature">
                     <div class="literature-div">
-                        <img src="<?php echo base_url().'assets/images/literature/'.$value->image ?>" alt="">
+                        <img  onContextMenu="return false;"  src="<?php echo base_url().'assets/images/literature/'.$value->image ?>" alt="">
                         <h4><?php echo $value->name; ?></h4>
                         <a target="_blank" href="<?php echo $value->category=='PDF'? base_url().'assets/images/literature/'.$value->pdf : $value->link; ?>"><?php echo $value->category=='PDF'? 'Read Now': 'Buy Now'; ?></a>
                     </div>
@@ -73,6 +74,16 @@ tata.error('Error', '<?php echo $this->session->flashdata('error'); ?>', {
 
 <?php } ?>
 </script>
-
+<script>
+$(document).ready(function() {
+    $("body").on("contextmenu", function(e) {
+        tata.error('Error', 'right-click is disabled!', {
+            duration: 10000,
+            animate: 'slide',
+        })
+        return false;
+    });
+});
+</script>
 
 </html>
