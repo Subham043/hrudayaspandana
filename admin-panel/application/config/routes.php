@@ -53,10 +53,14 @@ $route['home/video/(:any)']  	= 'Home/video/$1';
 $route['home/banner']  	= 'Home/banner';
 $route['home/banner/delete/(:any)']  	= 'Home/deleteBannerImage/$1';
 
-$route['gallery/(:any)']  	= 'Gallery/view/$1';
-$route['gallery/images/upload/(:any)']  	= 'Gallery/galleryUpload/$1';
-$route['gallery/images/view/(:any)']  	= 'Gallery/galleryView/$1';
-$route['gallery/images/delete/(:any)/(:any)']  	= 'Gallery/deleteGalleryImage/$1/$2';
+// $route['gallery/(:any)']  	= 'Gallery/view/$1';
+// $route['gallery/images/upload/(:any)']  	= 'Gallery/galleryUpload/$1';
+// $route['gallery/images/view/(:any)']  	= 'Gallery/galleryView/$1';
+// $route['gallery/images/delete/(:any)/(:any)']  	= 'Gallery/deleteGalleryImage/$1/$2';
+
+$route['gallery-images/(:any)']  	= 'GalleryImages/index/$1';
+$route['gallery-images/upload/(:any)']  	= 'GalleryImages/upload/$1';
+$route['gallery-images/delete/(:any)/(:any)']  	= 'GalleryImages/delete/$1/$2';
 
 $route['gallery-audios/(:any)']  	= 'GalleryAudios/index/$1';
 $route['gallery-audio/upload/(:any)']  	= 'GalleryAudios/upload/$1';
@@ -89,14 +93,17 @@ $route['events/status/(:any)/(:any)/(:any)']  	= 'Events/status/$1/$2/$3';
 
 $route['services/(:any)']   		= 'Services/index/$1'; 		
 $route['services/new/add']  	= 'Services/add';
-$route['services/new/gallery/images/(:any)']  	= 'Services/galleryUpload/$1';
-$route['services/new/gallery/images/view/(:any)']  	= 'Services/galleryView/$1';
-$route['services/new/gallery/images/delete/(:any)']  	= 'Services/deleteGalleryImage/$1';
+// $route['services/new/gallery/images/(:any)']  	= 'Services/galleryUpload/$1';
+// $route['services/new/gallery/images/view/(:any)']  	= 'Services/galleryView/$1';
+// $route['services/new/gallery/images/delete/(:any)']  	= 'Services/deleteGalleryImage/$1';
 $route['services/new/gallery/audio/(:any)/(:any)']  	= 'Services/galleryAudioUpload/$1/$2';
 $route['services/new/gallery/new/audio/delete/(:any)']  	= 'Services/deleteGalleryAudio/$1';
+$route['services/new/gallery/image/(:any)/(:any)']  	= 'Services/galleryImageUpload/$1/$2';
+$route['services/new/gallery/new/image/delete/(:any)']  	= 'Services/deleteGalleryImage/$1';
 $route['services/view/(:any)/(:any)']  	= 'Services/view/$1/$2';
-$route['services/gallery/(:any)/(:any)']  	= 'Services/gallery/$1/$2';
+// $route['services/gallery/(:any)/(:any)']  	= 'Services/gallery/$1/$2';
 $route['services/audio/(:any)/(:any)']  	= 'Services/audio/$1/$2';
+$route['services/image/(:any)/(:any)']  	= 'Services/image/$1/$2';
 $route['services/videos/(:any)/(:any)']  	= 'Services/videos/$1/$2';
 $route['services/videos/delete/(:any)/(:any)']  	= 'Services/videos_delete/$1/$2';
 $route['services/delete/(:any)/(:any)']  	= 'Services/delete/$1/$2';

@@ -19,10 +19,18 @@
     <link type="text/css" rel="Stylesheet" href="<?php echo CaptchaUrls::LayoutStylesheetUrl() ?>" />
     <style>
     .img-thumbnail {
-        background-color: transparent !important;
-        border: 1px solid transparent !important;
+        background-color: white !important;
+        border: 1px solid white !important;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .img-thumbnail:hover {
+        background-color: #ffaa49 !important;
+        border: 1px solid #ffaa49 !important;
         text-align: center;
     }
+
     .audio-thumbnail {
         border: 1px solid transparent !important;
         text-align: center;
@@ -31,6 +39,7 @@
         background-position: center;
         background-repeat: no-repeat;
     }
+
     .audio-description {
         height: 150px;
         max-height: 150px;
@@ -85,6 +94,30 @@
         font-size: 17px;
         font-weight: bold;
         color: #747070;
+    }
+
+    .img-thumbnail{
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .img-thumbnail:hover img {
+        opacity: 0.1;
+    }
+
+    .img-thumbnail:hover .desc-cont {
+        opacity: 1;
+    }
+
+    .desc-cont{
+        width: 100%;
+        padding:5px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
     }
     </style>
 </head>
@@ -164,6 +197,17 @@
                 class="thumbnail img-thumbnail">
                 <img onContextMenu="return false;" alt=".."
                     src="<?php echo base_url(); ?>assets/images/home/gallery/<?php echo $value->image;?>" />
+                <div class="desc-cont">
+                    <div class="audio-title">
+                        <p class="title"><?php echo $value->title;?></p>
+                        <p class="time-stamp"><?php echo date('d', strtotime($value->timestamp)); ?>-
+                            <?php echo date('M', strtotime($value->timestamp)); ?>-
+                            <?php echo date('Y', strtotime($value->timestamp)); ?></p>
+                    </div>
+                    <div class="audio-description">
+                        <p class="description"><?php echo $value->description;?></p>
+                    </div>
+                </div>
             </a>
             <?php } ?>
 
@@ -245,6 +289,7 @@
     <?php } ?>
 
     <?php $this->load->view('includes/footer') ?>
+    <?php $this->load->view('includes/scroll-top-button') ?>
 </body>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>

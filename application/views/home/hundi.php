@@ -190,6 +190,7 @@
     </div>
 
     <?php $this->load->view('includes/footer') ?>
+    <?php $this->load->view('includes/scroll-top-button') ?>
 </body>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>

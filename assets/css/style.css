@@ -1736,6 +1736,7 @@ footer .last-footer p {
 	width: 32%;
 	margin-bottom: 20px;
 	transition: all 0.3s ease-in-out;
+	text-align: center;
 }
 
 #gallery li:hover {
@@ -1748,6 +1749,7 @@ footer .last-footer p {
 
 #gallery li .img-thumbnail{
 	display: inline-block;
+	width: 75%;
 	transition: all 0.3s ease-in-out;
 }
 #gallery li .img-thumbnail img {

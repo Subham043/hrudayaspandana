@@ -36,6 +36,17 @@ class M_services extends CI_Model {
         }
     }
 
+    public function insertGalleryImage($data)
+    {
+        $this->db->insert('gallery',$data);
+        $insertId = $this->db->insert_id();
+        if ($insertId) {
+            return $insertId;
+        }else{
+            return false;
+        }
+    }
+
 
     public function getService($id){
         return  $this->db->where('id',$id)->get('services')->row();
@@ -106,8 +117,12 @@ class M_services extends CI_Model {
         return  $this->db->where('id',$id)->get('gallery-audios')->row();
     }
 
+    public function getHomeGalleryImage($id){
+        return  $this->db->where('id',$id)->get('gallery')->row();
+    }
+
     public function deleteHomeGalleryImage($id){
-        $this->db->where('service_id',$id);
+        $this->db->where('id',$id);
 		if($this->db->delete('gallery')){
             return true;
         }else{
@@ -167,6 +182,10 @@ class M_services extends CI_Model {
 
     public function galleryGetByServiceId($id){
         return  $this->db->where('service_id', $id)->order_by('id','desc')->get('gallery-audios')->result();
+    }
+
+    public function galleryImageGetByServiceId($id){
+        return  $this->db->where('service_id', $id)->order_by('id','desc')->get('gallery')->result();
     }
 
 }

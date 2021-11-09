@@ -434,24 +434,139 @@ class Services extends CI_Controller {
 		}
     }
 
-    public function gallery($id='', $type='')
+    // public function gallery($id='', $type='')
+	// {
+    //     $data['title']  = 'Services - Hrudayaspandana';
+    //     switch ($type) {
+	// 		case "madhava-seva":
+    //             $type= "madhava-seva";
+    //             break;
+  
+    //           case "manava-seva":
+    //             $type= "manava-seva";
+    //             break;
+  
+    //           case "vedic-rituals":
+    //               $type= "vedic-rituals";
+    //               break;
+  
+    //           case "activities":
+    //               $type= "activities";
+    //               break;
+			
+	// 		default:
+	// 			$this->session->set_flashdata('error','Invalid Page');
+	// 			redirect('dashboard');
+	// 	}
+    //     $id = $this->encryption_url->safe_b64decode($id);
+    //     $data['service']= $this->m_services->getService($id);
+	// 	if(!empty($id) && !empty($data['service'])){
+            
+           
+            
+    //         $this->load->view('pages/services/view-services-gallery', $data);  
+	// 	}else{
+    //         $this->session->set_flashdata('error','Invalid Page');
+    //         return redirect('services/'.$type);
+	// 	}
+    // }
+
+    // public function galleryUpload($id='')
+	// {
+    //     $config['upload_path']          = '../assets/images/home/gallery';
+    //     $config['allowed_types']        = 'jpg|png|jpeg';                
+    //     $config['max_width']            = 0;
+    //     $config['encrypt_name']         = TRUE;
+    //     $this->load->library('upload', $config);
+    //     if(!is_dir($config['upload_path'])) mkdir($config['upload_path'], 0777, TRUE);
+    //     $id = $this->encryption_url->safe_b64decode($id);
+    //     $data['service']= $this->m_services->getService($id);
+    //     if ( ! $this->upload->do_upload('files'))
+    //     {
+    //         $data = array(
+    //             'success'=>false,
+    //             "error"=> substr($this->upload->display_errors(),3,-3),
+    //             "errorcode"=>'400'
+    //         );
+    //         echo json_encode($data);
+    //     }else{
+
+    //         $newdata = array(
+    //             'image' => $this->upload->data('file_name'),
+    //             'category' => $data['service']->page,
+    //             'service_id' => $data['service']->id,
+    //         );
+    //         $application_id = $this->m_services->insertGallery($newdata);
+    //         if($application_id != false)
+    //         {
+    //             $data = array(
+    //                 'success'=>true
+    //             );
+    //         }else{
+    //             $data = array(
+    //                 'success'=>false,
+    //                 "error"=> 'Something went wrong, Please try again',
+    //                 "errorcode"=>'400'
+    //             );
+    //         }
+    //         echo json_encode($data);
+    //     }
+    // }
+
+    // public function galleryView($id='')
+	// {
+    //     $id = $this->encryption_url->safe_b64decode($id);
+    //     $data['result']= $this->m_services->serviceGetById($id);
+    //     echo json_encode($data);
+    // }
+
+    // public function deleteGalleryImage($id = '')
+    // {
+        
+    //     $this->load->model('m_gallery');
+    //     $imageResult = $this->m_gallery->getHomeGalleryImage($id);
+    //     $service= $this->m_services->getService($imageResult->service_id);
+    //     $application_id = $this->m_gallery->deleteHomeGalleryImage($id);
+    //     if($application_id != false)
+    //     {
+    //         $path = '../assets/images/home/gallery/'.$imageResult->image;
+    //         unlink($path);
+    //         $this->session->set_flashdata('success','Image Deleted');
+    //         redirect('services/gallery/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
+            
+    //     }else{
+    //         $this->session->set_flashdata('error','Some error occured please try again');
+    //         redirect('services/gallery/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
+    //     }
+    // }
+
+    public function image($id='', $type='')
 	{
+        
         $data['title']  = 'Services - Hrudayaspandana';
         switch ($type) {
 			case "madhava-seva":
                 $type= "madhava-seva";
+                $data['type']= "madhava-seva";
+                $data['pagetype']= "Madhava Seva";
                 break;
   
               case "manava-seva":
                 $type= "manava-seva";
+                $data['type']= "manava-seva";
+                $data['pagetype']= "Manava Seva";
                 break;
   
               case "vedic-rituals":
                   $type= "vedic-rituals";
+                  $data['type']= "vedic-rituals";
+                $data['pagetype']= "Vedic Rituals";
                   break;
   
               case "activities":
                   $type= "activities";
+                  $data['type']= "activities";
+                $data['pagetype']= "Activities";
                   break;
 			
 			default:
@@ -459,84 +574,126 @@ class Services extends CI_Controller {
 				redirect('dashboard');
 		}
         $id = $this->encryption_url->safe_b64decode($id);
+        $data['id'] = $id;
         $data['service']= $this->m_services->getService($id);
 		if(!empty($id) && !empty($data['service'])){
-            
            
-            
-            $this->load->view('pages/services/view-services-gallery', $data);  
+            $data['result'] = $this->m_services->galleryImageGetByServiceId($id);
+            $this->load->view('pages/services/images', $data);  
 		}else{
             $this->session->set_flashdata('error','Invalid Page');
             return redirect('services/'.$type);
 		}
     }
 
-    public function galleryUpload($id='')
+    public function galleryImageUpload($id='', $type='')
 	{
-        $config['upload_path']          = '../assets/images/home/gallery';
-        $config['allowed_types']        = 'jpg|png|jpeg';                
-        $config['max_width']            = 0;
-        $config['encrypt_name']         = TRUE;
-        $this->load->library('upload', $config);
-        if(!is_dir($config['upload_path'])) mkdir($config['upload_path'], 0777, TRUE);
+        switch ($type) {
+			case "madhava-seva":
+                $type= "madhava-seva";
+                $data['type']= "madhava-seva";
+                $data['pagetype']= "Madhava Seva";
+                break;
+  
+              case "manava-seva":
+                $type= "manava-seva";
+                $data['type']= "manava-seva";
+                $data['pagetype']= "Manava Seva";
+                break;
+  
+              case "vedic-rituals":
+                  $type= "vedic-rituals";
+                  $data['type']= "vedic-rituals";
+                $data['pagetype']= "Vedic Rituals";
+                  break;
+  
+              case "activities":
+                  $type= "activities";
+                  $data['type']= "activities";
+                $data['pagetype']= "Activities";
+                  break;
+			
+			default:
+				$this->session->set_flashdata('error','Invalid Page');
+				redirect('dashboard');
+		}
+
         $id = $this->encryption_url->safe_b64decode($id);
+        $data['id'] = $id;
         $data['service']= $this->m_services->getService($id);
-        if ( ! $this->upload->do_upload('files'))
-        {
-            $data = array(
-                'success'=>false,
-                "error"=> substr($this->upload->display_errors(),3,-3),
-                "errorcode"=>'400'
-            );
-            echo json_encode($data);
-        }else{
-
-            $newdata = array(
-                'image' => $this->upload->data('file_name'),
-                'category' => $data['service']->page,
-                'service_id' => $data['service']->id,
-            );
-            $application_id = $this->m_services->insertGallery($newdata);
-            if($application_id != false)
+		if(!empty($id) && !empty($data['service'])){
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('title', 'Title', 'trim|required');
+            $this->form_validation->set_rules('description', 'Description', 'trim|required');
+            
+            if($this->form_validation->run()) 
             {
-                $data = array(
-                    'success'=>true
-                );
-            }else{
-                $data = array(
-                    'success'=>false,
-                    "error"=> 'Something went wrong, Please try again',
-                    "errorcode"=>'400'
-                );
-            }
-            echo json_encode($data);
-        }
-    }
+                    $config['upload_path']          = '../assets/images/home/gallery';
+                    $config['allowed_types']        = 'jpg|png|jpeg';                
+                    $config['max_width']            = 0;
+                    $config['encrypt_name']         = TRUE;
+                    $this->load->library('upload', $config);
+                    if(!is_dir($config['upload_path'])) mkdir($config['upload_path'], 0777, TRUE);
 
-    public function galleryView($id='')
-	{
-        $id = $this->encryption_url->safe_b64decode($id);
-        $data['result']= $this->m_services->serviceGetById($id);
-        echo json_encode($data);
+                    if ( ! $this->upload->do_upload('image'))
+                    {
+                        $this->session->set_flashdata('error',$this->upload->display_errors());
+                        $data['title']  = 'Gallery - Hrudayaspandana';
+                        $this->load->view('pages/services/add-images', $data);
+                    }else{
+
+                        $title 	= $this->input->post('title');
+                        $description 	= $this->input->post('description');
+                        $image = $this->upload->data('file_name');
+
+                        $data = array(
+                            'title'  => $title,  
+                            'description'  => $description,  
+                            'image'  => $image,  
+                            'category'  => $data['service']->page,   
+                            'service_id'  => $data['service']->id,   
+                        );
+                        $data = html_escape($this->security->xss_clean($data));
+                        $application_id = $this->m_services->insertGalleryImage($data);
+                        if($application_id != false)
+                        {
+                            $this->session->set_flashdata('success','Image Stored');
+                            redirect('services/image/'.$this->encryption_url->safe_b64encode($id).'/'.$type);
+                            
+                        }else{
+                            $this->session->set_flashdata('error','Some error occured please try again');
+                            redirect('services/new/gallery/image/'.$this->encryption_url->safe_b64encode($id).'/'.$type);
+                        }
+                    }
+            }else{
+                $data['title']  = 'Gallery - Hrudayaspandana';
+                $this->load->view('pages/services/add-images', $data);
+            }    
+		}else{
+            $this->session->set_flashdata('error','Invalid Page');
+            return redirect('services/'.$type);
+		}
+
     }
 
     public function deleteGalleryImage($id = '')
     {
-        
-        $this->load->model('m_gallery');
-        $imageResult = $this->m_gallery->getHomeGalleryImage($id);
+        $id = $this->encryption_url->safe_b64decode($id);
+        $imageResult = $this->m_services->getHomeGalleryImage($id);
         $service= $this->m_services->getService($imageResult->service_id);
-        $application_id = $this->m_gallery->deleteHomeGalleryImage($id);
+        $application_id = $this->m_services->deleteHomeGalleryImage($id);
+        // print_r($application_id);
+        // exit;
         if($application_id != false)
         {
             $path = '../assets/images/home/gallery/'.$imageResult->image;
             unlink($path);
             $this->session->set_flashdata('success','Image Deleted');
-            redirect('services/gallery/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
+            redirect('services/image/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
             
         }else{
             $this->session->set_flashdata('error','Some error occured please try again');
-            redirect('services/gallery/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
+            redirect('services/image/'.$this->encryption_url->safe_b64encode($service->id).'/'.$service->type);
         }
     }
 

@@ -37,7 +37,7 @@
                         <p style="display: inline-block;margin:0;text-align:right;">
                             <select id="table_filter"
                                 style="border-color: #ffaa49;border-radius: 5px;background: rgba(255, 170, 73, 0.5);color: white; margin-bottom: 10px; padding: 5px 10px;outline:none;">
-                                <option value="">Select Filter</option>
+                                <!-- <option value="">Select Filter</option> -->
                                 <option value="all" <?php echo $this->input->get('filter')=="all" ? "selected": "" ?> >All <?php echo $hero_head_type ?></option>
                                 <option value="madhava-seva" <?php echo $this->input->get('filter')=="madhava-seva" ? "selected": "" ?> >Madhava Seva</option>
                                 <option value="manava-seva" <?php echo $this->input->get('filter')=="manava-seva" ? "selected": "" ?> >Manava Seva</option>
@@ -91,6 +91,7 @@
     </section>
 
     <?php $this->load->view('includes/footer') ?>
+    <?php $this->load->view('includes/scroll-top-button') ?>
 </body>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>

@@ -45,9 +45,9 @@
             <ul class="collapsible men-lft">
                 <li class="si-m si-gg">
                     <div class="collapsible-header"><i class="fas fa-images li-icon"></i>Gallery - Images</div>
-                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery/madhava-seva"
+                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-images/madhava-seva"
                                 class="<?php echo ($this->uri->segment(2) == 'madhava-seva') ? 'active' : '' ?>">Madhava Seva</a></span></div>
-                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery/manava-seva"
+                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>gallery-images/manava-seva"
                                 class="<?php echo ($this->uri->segment(2) == 'manava-seva') ? 'active' : '' ?>">Manava Seva</a></span></div>
                 </li>
             </ul>
@@ -89,10 +89,10 @@
                                 class="<?php echo ($this->uri->segment(2) == 'manava-seva') ? 'active' : '' ?>">Manava Seva</a></span></div>
                     <div class="collapsible-body"><span><a href="<?php echo base_url() ?>services/madhava-seva"
                                 class="<?php echo ($this->uri->segment(2) == 'madhava-seva') ? 'active' : '' ?>">Madhava Seva</a></span></div>
-                    <div class="collapsible-body"><span><a href="<?php echo base_url() ?>services/vedic-rituals"
+                    <!-- <div class="collapsible-body"><span><a href="<?php echo base_url() ?>services/vedic-rituals"
                                 class="<?php echo ($this->uri->segment(2) == 'vedic-rituals') ? 'active' : '' ?>">Vedic Rituals</a></span></div>
                     <div class="collapsible-body"><span><a href="<?php echo base_url() ?>services/activities"
-                                class="<?php echo ($this->uri->segment(2) == 'activities') ? 'active' : '' ?>">Activities</a></span></div>
+                                class="<?php echo ($this->uri->segment(2) == 'activities') ? 'active' : '' ?>">Activities</a></span></div> -->
                 </li>
             </ul>
             <li><a class="<?php echo $this->uri->segment(1) == 'literature'?'active':'' ?>"

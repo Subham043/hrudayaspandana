@@ -116,7 +116,7 @@
 
                         </ul>
                     </li>
-                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'login' || $this->uri->segment(1) == 'register') ? 'active-menu-link' :'' ?>" href="#">User</a>
+                    <!-- <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'login' || $this->uri->segment(1) == 'register') ? 'active-menu-link' :'' ?>" href="#">User</a>
                         <ul class="child">
                             <?php 
                             if ($this->session->userdata('user_id') != '') { ?>
@@ -127,10 +127,10 @@
                                 <li><a href="<?php echo base_url('register'); ?>">Register</a></li>
                             <?php } ?>
                         </ul>
-                    </li>
-                    <!-- <li class="menu-li">
-                        <a href="<?php echo base_url('e-hundi'); ?>" class="menu-call-to-action">E-Hundi</a>
                     </li> -->
+                    <li class="menu-li">
+                        <a href="<?php echo base_url('login'); ?>" class="menu-call-to-action">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>

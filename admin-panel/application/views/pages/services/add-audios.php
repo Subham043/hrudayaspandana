@@ -118,7 +118,7 @@ $this->load->library('encryption');
 
                         <div class="row">
                             <div class="col 12 m12">
-                                <p class="h5-para black-text m0">Gallery Video - Add</p>
+                                <p class="h5-para black-text m0">Service Audio - Add</p>
                             </div>
                             <div class="col 12 m6 right-align">
                                 <div class="card-title">
@@ -163,7 +163,7 @@ $this->load->library('encryption');
                                                             <input class="file-path validate" type="text">
                                                         </div>
                                                         <h6 class=" m0">
-                                                            <small> <i><b>Note</b>: Please upload gallery audio
+                                                            <small> <i><b>Note</b>: Please upload service audio
                                                                     <br>
                                                                     <span class="bold">Max file size:</span> 512kb <span
                                                                         class="red-text">*</span></i>

@@ -118,7 +118,7 @@ $this->load->library('encryption');
 
                         <div class="row">
                             <div class="col 12 m12">
-                                <p class="h5-para black-text m0">Gallery Video - Add</p>
+                                <p class="h5-para black-text m0">Gallery Audio - Add</p>
                             </div>
                             <div class="col 12 m6 right-align">
                                 <div class="card-title">

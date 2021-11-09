@@ -134,7 +134,7 @@
                                                             class="red hoverable" title="delete"><i class="fas fa-trash "></i></i></a>
                                                         <a href="<?php echo base_url('services/edit/'.$this->encryption_url->safe_b64encode($value->id).'') ?>"
                                                             class="yellow hoverable" title="edit"><i class="fas fa-pen "></i></i></a>
-                                                        <a href="<?php echo base_url('services/gallery/'.$this->encryption_url->safe_b64encode($value->id).'/'.$type) ?>"
+                                                        <a href="<?php echo base_url('services/image/'.$this->encryption_url->safe_b64encode($value->id).'/'.$type) ?>"
                                                             class="green hoverable" title="images"><i class="far fa-image"></i></i></a>
                                                         <a href="<?php echo base_url('services/audio/'.$this->encryption_url->safe_b64encode($value->id).'/'.$type) ?>"
                                                             class="green hoverable" style="margin-top: 8px" title="audios"><i class="fas fa-music"></i></i></a>
