@@ -82,7 +82,7 @@
     .audio-title .title {
         font-size: 20px;
         font-weight: bold;
-        color: #c53f93;
+        color: #3c3489;
         text-transform: uppercase;
     }
 
@@ -98,7 +98,7 @@
     }
 
     .img-thumbnail:hover img {
-        opacity: 0.1;
+        opacity: 0.2;
     }
 
     .img-thumbnail:hover .desc-cont {

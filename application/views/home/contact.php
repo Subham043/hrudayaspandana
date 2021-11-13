@@ -20,15 +20,14 @@
 </head>
 
 <body>
-<?php $this->load->view('includes/loader') ?>
+    <?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
 
-    <section class="events contact-events">
+    <!-- <section class="events contact-events">
         <div class="wrapper">
             <div class="heading">
-                <!-- <p class="upper-heading">Blogs</p> -->
                 <h4 class="lower-heading">Reach Us</h4>
             </div>
             <div class="events-main">
@@ -37,7 +36,6 @@
 
 
                     <div class="event-row-image contact-event-one">
-                        <!-- <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7898513320256!2d77.51846671482146!3d12.921224090888943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f011f2bf73f%3A0xad514ba017f39891!2sJurysoft!5e0!3m2!1sen!2sin!4v1631520547292!5m2!1sen!2sin"
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -49,9 +47,12 @@
                         <a href="#">
                             <h4 style="text-transform: capitalize">Sai Mayee Trust</h4>
                         </a>
-                        <p>28 SMS Layout, 5th Phase, JP Nagar,<br> Bangalore, 560078, India</p>
-                        <a href="tel:+123.456.7890" class="mailtel_link"><i class="fas fa-phone-volume"></i>
-                            +123.456.7890</a><br>
+                        <p>E601, Aishwarya Lake View Residency
+                            6th Cross, Kaggadasapura,<br>
+                            C V Raman Nagar,<br> Bangalore - 560093
+                            India</p>
+                        <a href="tel:+91 9663718977" class="mailtel_link"><i class="fas fa-phone-volume"></i>
+                            +91 9663718977</a><br>
                         <a href="mailto:needhelp@yourdomain.com" class="mailtel_link"><i class="fas fa-envelope"></i>
                             needhelp @ yourdomain.com</a>
                     </div>
@@ -62,9 +63,12 @@
                         <a href="#">
                             <h4 style="text-transform: capitalize">Sai Meru Mathi Trust</h4>
                         </a>
-                        <p>28 SMS Layout, 5th Phase, JP Nagar,<br> Bangalore, 560078, India</p>
-                        <a href="tel:+123.456.7890" class="mailtel_link"><i class="fas fa-phone-volume"></i>
-                            +123.456.7890</a><br>
+                        <p>E601, Aishwarya Lake View Residency
+                            6th Cross, Kaggadasapura,<br>
+                            C V Raman Nagar,<br> Bangalore - 560093
+                            India</p>
+                        <a href="tel:+91 99452 79415" class="mailtel_link"><i class="fas fa-phone-volume"></i>
+                            +91 99452 79415</a><br>
                         <a href="mailto:needhelp@yourdomain.com" class="mailtel_link"><i class="fas fa-envelope"></i>
                             needhelp @ yourdomain.com</a>
                     </div>
@@ -72,39 +76,16 @@
                         <div class="line"></div>
                     </div>
                     <div class="event-row-image contact-event-three">
-                        <!-- <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt=""> -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7898513320256!2d77.51846671482146!3d12.921224090888943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f011f2bf73f%3A0xad514ba017f39891!2sJurysoft!5e0!3m2!1sen!2sin!4v1631520547292!5m2!1sen!2sin"
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
 
 
-
-                    <!-- <div class="event-row-image">
-                        <img  onContextMenu="return false;"  src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
-                    </div>
-                    <div class="event-row-line event-row-five">
-                        <div class="line"></div>
-                    </div>
-                    <div class="event-row-text event-row-six">
-                        <a href="#">
-                            <h4 style="text-transform: capitalize">Church urges government to address poverty.</h4>
-                        </a>
-                        <p>Nerline Valery lived in a tent for four years after the Haiti
-                            earthquake. Now she and her family have a a new home. We can start thinking that the
-                            “best” corporate worship context is characterized by bright stage lights, fog, high
-                            end
-                            musical gear.</p>
-                    </div> -->
-
-
                 </div>
             </div>
-            <!-- <div class="events-main-btn">
-                <a href="">More Blogs</a>
-            </div> -->
         </div>
-    </section>
+    </section> -->
 
     <section class="hundi donation-page">
         <div class="wrapper">
@@ -143,14 +124,16 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <input type="text" id="fname" name="fname" class="form-control form-hundi-input"
-                                        placeholder="First Name" value="<?php echo $this->session->userdata('user_id') == '' ? set_value('fname') : $user->fname; ?>">
+                                        placeholder="First Name"
+                                        value="<?php echo $this->session->userdata('user_id') == '' ? set_value('fname') : $user->fname; ?>">
                                     <div style="color:red;"><?php echo form_error('fname'); ?></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <input type="text" id="lname" name="lname" class="form-control form-hundi-input"
-                                        placeholder="Last Name" value="<?php echo $this->session->userdata('user_id') == '' ? set_value('lname') : $user->lname; ?>">
+                                        placeholder="Last Name"
+                                        value="<?php echo $this->session->userdata('user_id') == '' ? set_value('lname') : $user->lname; ?>">
                                     <div style="color:red;"><?php echo form_error('lname'); ?></div>
                                 </div>
                             </div>
@@ -159,14 +142,16 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <input type="text" id="phone" name="phone" class="form-control form-hundi-input"
-                                        placeholder="Phone Number" value="<?php echo $this->session->userdata('user_id') == '' ? set_value('phone') : $user->phone; ?>">
+                                        placeholder="Phone Number"
+                                        value="<?php echo $this->session->userdata('user_id') == '' ? set_value('phone') : $user->phone; ?>">
                                     <div style="color:red;"><?php echo form_error('phone'); ?></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <input type="email" id="email" name="email" class="form-control form-hundi-input"
-                                        placeholder="Email" value="<?php echo $this->session->userdata('user_id') == '' ? set_value('email') : $user->email; ?>">
+                                        placeholder="Email"
+                                        value="<?php echo $this->session->userdata('user_id') == '' ? set_value('email') : $user->email; ?>">
                                     <div style="color:red;"><?php echo form_error('email'); ?></div>
                                 </div>
                             </div>

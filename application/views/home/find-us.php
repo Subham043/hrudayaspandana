@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<?php $this->load->view('includes/loader') ?>
+    <?php $this->load->view('includes/loader') ?>
     <?php $this->load->view('includes/header') ?>
 
     <?php $this->load->view('includes/hero') ?>
@@ -49,9 +49,12 @@
                         <a href="#">
                             <h4 style="text-transform: capitalize">Sai Mayee Trust</h4>
                         </a>
-                        <p>28 SMS Layout, 5th Phase, JP Nagar,<br> Bangalore, 560078, India</p>
-                        <a href="tel:+123.456.7890" class="mailtel_link"><i class="fas fa-phone-volume"></i>
-                            +123.456.7890</a><br>
+                        <p>E601, Aishwarya Lake View Residency
+                            6th Cross, Kaggadasapura,<br>
+                            C V Raman Nagar,<br> Bangalore - 560093
+                            India</p>
+                        <a href="tel:+91 9663718977" class="mailtel_link"><i class="fas fa-phone-volume"></i>
+                            +91 9663718977</a><br>
                         <a href="mailto:needhelp@yourdomain.com" class="mailtel_link"><i class="fas fa-envelope"></i>
                             needhelp @ yourdomain.com</a>
                     </div>
@@ -62,9 +65,12 @@
                         <a href="#">
                             <h4 style="text-transform: capitalize">Sai Meru Mathi Trust</h4>
                         </a>
-                        <p>28 SMS Layout, 5th Phase, JP Nagar,<br> Bangalore, 560078, India</p>
-                        <a href="tel:+123.456.7890" class="mailtel_link"><i class="fas fa-phone-volume"></i>
-                            +123.456.7890</a><br>
+                        <p>E601, Aishwarya Lake View Residency
+                            6th Cross, Kaggadasapura,<br>
+                            C V Raman Nagar,<br> Bangalore - 560093
+                            India</p>
+                        <a href="tel:+91 99452 79415" class="mailtel_link"><i class="fas fa-phone-volume"></i>
+                            +91 99452 79415</a><br>
                         <a href="mailto:needhelp@yourdomain.com" class="mailtel_link"><i class="fas fa-envelope"></i>
                             needhelp @ yourdomain.com</a>
                     </div>

@@ -102,9 +102,8 @@
             <div class="about-row">
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img onContextMenu="return false;"
-                            src="<?php echo base_url(); ?>assets/images/about/about4.jpg" alt=""
-                            class="about-card-img">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/about/about4.jpg"
+                            alt="" class="about-card-img">
                         <h4>Hrudayaspandana</h4>
                         <p>A spiritual hermitage in green valleys of the mountains where you can see millions of stars
                             at night.</p>
@@ -112,9 +111,8 @@
                 </div>
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img onContextMenu="return false;"
-                            src="<?php echo base_url(); ?>assets/images/about/about6.jpg" alt=""
-                            class="about-card-img">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/about/about6.jpg"
+                            alt="" class="about-card-img">
                         <h4>Sai Mayee Trust</h4>
                         <p>We appreciate your contribution to the donation programs and will happily accept any help we
                             can get.</p>
@@ -122,9 +120,8 @@
                 </div>
                 <div class="col-3-about">
                     <div class="about-card">
-                        <img onContextMenu="return false;"
-                            src="<?php echo base_url(); ?>assets/images/about/about5.jpg" alt=""
-                            class="about-card-img">
+                        <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/about/about5.jpg"
+                            alt="" class="about-card-img">
                         <h4>Sri Sai Meru Mathi Trust</h4>
                         <p>Our community is actively involved in the life of locals that require humanitarian support on
                             a regular basis.</p>
@@ -143,12 +140,9 @@
                         <h4 class="lower-heading">We together can make a difference...</h4>
                     </div>
                     <div class="paragraph">
-                        <p>Dakshina is an ancient tradition of those who practice yoga, and it is a display of
-                            generosity – a private contribution to the financial support of the teacher and their
-                            teachings.</p>
-                        <p>When we experience a pure inner impulse caused by a higher purpose to help others, to express
-                            our unconditional gratefulness, it is called Dakshina. We are being guided by our feelings,
-                            and, in this case, the amount we give is irrelevant as long as we gain our own true Self.
+                        <p>We are sure our spiritual, noble, lofty and socially motivated mission must be resonating
+                            with your heart, and as an enlightened individual you would like to contribute in some way
+                            or the other to this noble cause. We need many of you to come and join us in this endeavor.
                         </p>
                     </div>
                 </div>
@@ -266,7 +260,8 @@
         <div class="wrapper">
             <div class="heading">
                 <h4>Subscribe For More Updates</h4>
-                <p>Life is challenge, meet it! Life is a dream, realize it! Life is a game, Play it! Life is love, spread it!</p>
+                <p>Life is challenge, meet it! Life is a dream, realize it! Life is a game, Play it! Life is love,
+                    spread it!</p>
                 <form id="subscribeForm" method="post">
                     <div class="row mb-4">
                         <div class="col-lg-4">
@@ -434,8 +429,8 @@
                     <div class="col-lg-5 blog-main-single">
                         <a href="<?php echo base_url('events/past-events'); ?>" class="blog-link">
                             <div class="col-blog-2 blog-img-bottom">
-                                <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/swamy2.jpg"
-                                    alt="">
+                                <img onContextMenu="return false;"
+                                    src="<?php echo base_url(); ?>assets/images/swamy2.jpg" alt="">
                             </div>
                             <div class="blog-single-inner-row">
                                 <div class="col-blog-2 blog-text-top">
@@ -468,13 +463,14 @@
                                     “best” corporate worship context is characterized by bright stage lights, fog, high
                                     end
                                     musical gear.</p> -->
-                                    <a href="<?php echo base_url('events/upcoming-events'); ?>" class="blog-link-read">View
+                                    <a href="<?php echo base_url('events/upcoming-events'); ?>"
+                                        class="blog-link-read">View
                                         More</a>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

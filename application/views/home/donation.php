@@ -48,16 +48,11 @@
                 <div class="col-2-donation">
                     <div class="heading">
                         <p class="upper-heading">donations</p>
-                        <h4 class="lower-heading">Dakshina:
-                            Yoga’s Practice of “Giving Back”</h4>
+                        <h4 class="lower-heading">We Together Can Make A Difference...</h4>
                     </div>
                     <div class="paragraph">
-                        <p>Dakshina is an ancient tradition of those who practice yoga, and it is a display of
-                            generosity – a private contribution to the financial support of the teacher and their
-                            teachings.</p>
-                        <p>When we experience a pure inner impulse caused by a higher purpose to help others, to express
-                            our unconditional gratefulness, it is called Dakshina. We are being guided by our feelings,
-                            and, in this case, the amount we give is irrelevant as long as we gain our own true Self.
+                        <p>We are sure our spiritual, noble, lofty and socially motivated mission must be resonating with your heart, and as an enlightened individual you would like to contribute in some way or the other to this noble cause.  We need many of you to come and join us in this endeavor. </p>
+                        <p><b>We together can make a difference</b>
                         </p>
                     </div>
                 </div>

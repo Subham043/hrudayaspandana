@@ -34,12 +34,16 @@
                         <h4 class="lower-heading">Hrudayaspandana</h4>
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                            nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                            illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                            blandit.
+                        <p>Hrudaya Spandana stands for Reverbarations of Love. (word Hrudaya means “Love” and Spandana
+                            means “Reverberations”). The team of volunteers at Hrudaya Spandana operate from the space
+                            of
+                            love. All the activities, they are embarking on, are for spreading pure divine love. Goal of
+                            this team is to share love and resources with our fellow human beings in a way that fulfils
+                            their basic needs and makes them feel cared for. This helps all of us to taste the bliss of
+                            societal
+                            togetherness. This endeavour with the flame of philanthropy, kindled in our hearts, inspires
+                            us to
+                            carry the torch of service forward for universal good.
                         </p>
                         <p class="icon-p"><a href=""><i class="fab fa-facebook-f"></i></a><a href=""><i
                                     class="fab fa-twitter"></i></a><a href=""><i class="fab fa-youtube"></i></a></p>
@@ -51,21 +55,26 @@
                         <h4 class="lower-heading">Sai Mayee Trust</h4>
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                            nostrud exerci tation ullamcorper.</p>
-                        <p>Suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.</p>
+                        <p>For society to pulsate with joy and growth, all classes and ages of people, irrespective of religion,
+profession, gender or personal preferences, must have a bond of connectivity and interdependence
+that takes care of both material and emotional needs of everyone. In this light, we help orphanages
+so that children without parents can experience love and have their needs met and can become
+useful members of the society when they grow up. At the other end, we also provide succour to old
+people who do not have anyone to take care of them. </p>
+                        <!-- <p>Suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+                            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.</p> -->
                     </div>
                     <div class="button">
                         <a href="<?php echo base_url('about/sai-mayee-trust'); ?>">View More</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 first-about-img-div about-page-col">
-                    <img  onContextMenu="return false;"  src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-3-copyright.jpg" alt="">
+                    <img onContextMenu="return false;"
+                        src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-3-copyright.jpg" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 second-about-img-div about-page-col">
-                    <img  onContextMenu="return false;"  src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-4-copyright.jpg" alt="">
+                    <img onContextMenu="return false;"
+                        src="http://vihara.themerex.net/wp-content/uploads/2018/12/img-4-copyright.jpg" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 third-about-text-div about-page-col">
                     <div class="heading">
@@ -73,11 +82,18 @@
                         <h4 class="lower-heading">Sai Meru Mathi Trust</h4>
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                            nostrud exerci tation ullamcorper.</p>
-                        <p>Suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.</p>
+                        <p>The body is the temple of God and the temple is the body of societal consciousness of
+                            Divinity.
+                            Temples in India were (and still are) not merely architectural marvels of breath-taking
+                            beauty, but also specialized structures designed for very specific purposes like creating
+                            the
+                            needed ambience to realize the principle of Oneness running through the variegated
+                            creation, awakening and balancing chakras (Centre’s of consciousness) for living a
+
+                            wholesome life, getting protection from physical harm and natural calamities, healing
+                            diseases.</p>
+                        <!-- <p>Suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+                            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat.</p> -->
                     </div>
                     <div class="button">
                         <a href="<?php echo base_url('about/sai-meru-mathi-trust'); ?>">View More</a>
