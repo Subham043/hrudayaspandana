@@ -809,6 +809,85 @@ class Home extends CI_Controller {
         }
     }
 
+    public function faq()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - FAQ";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "FAQ";
+        $this->load->view('home/faq', $data);
+    }
+
+    public function testimonial()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - Testimonial";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "Testimonial";
+        $this->load->view('home/testimonial', $data);
+    }
+
+    public function leadershipTeam()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - Leadership Team";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "Leadership Team";
+        $this->load->view('home/leadership-team', $data);
+    }
+
+    public function media()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - Media";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "Media";
+        $this->load->view('home/media', $data);
+    }
+
+    public function findUs()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - Find Us";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "Find Us";
+        $this->load->view('home/find-us', $data);
+    }
+
+    public function crossword()
+	{
+        $this->botdetectcaptcha->Reset();
+        $data['captchaHtml'] = $this->botdetectcaptcha->Html();
+        $data['title'] = "HRUDAYASPANDANA - Crossword";
+        $data['dynamic_manava_seva'] = $this->home_model->getManavaSeva();
+        $data['dynamic_madhava_seva'] = $this->home_model->getMadhavaSeva();
+        $data['dynamic_vedic'] = $this->home_model->getVedic();
+        $data['dynamic_activity'] = $this->home_model->getActivity();
+        $data['hero_heading'] = "Crossword";
+        $data['gallery'] = $this->home_model->getAllCrossword();
+        $this->load->view('home/crossword', $data);
+    }
+
     public function pageNotFound()
 	{
         $data['title'] = "HRUDAYASPANDANA - 404";

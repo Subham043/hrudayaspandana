@@ -11,12 +11,12 @@
             </button>
             <div class="nav-menu" id="nav_menu">
                 <ul class="menu-row" id="responsive-menu">
-                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'about') ? 'active-menu-link' :'' ?>" href="#">About Us</a>
+                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'about' || $this->uri->segment(1) == 'testimonial' || $this->uri->segment(1) == 'leadership-team' || $this->uri->segment(1) == 'media') ? 'active-menu-link' :'' ?>" href="#">About Us</a>
                         <ul class="child">
                             <li><a href="<?php echo base_url('about'); ?>">Introduction</a></li>
-                            <li><a href="#">Leadership Team</a></li>
-                            <li><a href="#">Media</a></li>
-                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="<?php echo base_url('leadership-team'); ?>">Leadership Team</a></li>
+                            <li><a href="<?php echo base_url('media'); ?>">Media</a></li>
+                            <li><a href="<?php echo base_url('testimonial'); ?>">Testimonial</a></li>
                         </ul>
                     </li>
                     <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'donation') ? 'active-menu-link' :'' ?>" href="#">Donation</a>
@@ -38,19 +38,19 @@
                             <li><a href="<?php echo base_url('gallery/videos'); ?>">Videos</a></li>
                         </ul>
                     </li>
-                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'literature') ? 'active-menu-link' :'' ?>" href="#">Insights</a>
+                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'literature' || $this->uri->segment(1) == 'crossword') ? 'active-menu-link' :'' ?>" href="#">Insights</a>
                         <ul class="child">
                             <li><a href="<?php echo base_url('literature'); ?>">Literature</a></li>
                             <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Crossword</a></li>
+                            <li><a href="<?php echo base_url('crossword'); ?>">Crossword</a></li>
                         </ul>
                     </li>
-                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'volunteer' || $this->uri->segment(1) == 'contact') ? 'active-menu-link' :'' ?>" href="#">Join Hands</a>
+                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'volunteer' || $this->uri->segment(1) == 'contact' || $this->uri->segment(1) == 'faq' || $this->uri->segment(1) == 'find-us') ? 'active-menu-link' :'' ?>" href="#">Join Hands</a>
                         <ul class="child">
                             <li><a href="<?php echo base_url('volunteer'); ?>">Volunteer</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="<?php echo base_url('faq'); ?>">FAQs</a></li>
                             <li><a href="<?php echo base_url('contact'); ?>">Message us</a></li>
-                            <li><a href="#">Find Us</a></li>
+                            <li><a href="<?php echo base_url('find-us'); ?>">Find Us</a></li>
                         </ul>
                     </li>
 
@@ -60,7 +60,7 @@
                         if (!empty($dynamic_activity)) {
                             ?>
                             <li class="parent"><a href="#">Activity<span class="expand">»</span></a>
-                                <ul class="child">
+                                <ul class="child small-child">
                                 <?php
                                 foreach ($dynamic_activity as $key => $value) { 
                                 ?>
@@ -74,7 +74,7 @@
                         if (!empty($dynamic_manava_seva)) {
                             ?>
                             <li class="parent"><a href="#">Manava Seva<span class="expand">»</span></a>
-                                <ul class="child">
+                                <ul class="child small-child">
                                 <?php
                                 foreach ($dynamic_manava_seva as $key => $value) { 
                                 ?>
@@ -88,7 +88,7 @@
                         if (!empty($dynamic_madhava_seva)) {
                             ?>
                             <li class="parent"><a href="#">Madhava Seva<span class="expand">»</span></a>
-                                <ul class="child">
+                                <ul class="child small-child">
                                 <?php
                                 foreach ($dynamic_madhava_seva as $key => $value) { 
                                 ?>
@@ -102,7 +102,7 @@
                         if (!empty($dynamic_vedic)) {
                             ?>
                             <li class="parent"><a href="#">Vedic Rituals<span class="expand">»</span></a>
-                                <ul class="child">
+                                <ul class="child small-child">
                                 <?php
                                 foreach ($dynamic_vedic as $key => $value) { 
                                 ?>
@@ -128,9 +128,19 @@
                             <?php } ?>
                         </ul>
                     </li> -->
+                    <?php 
+                            if ($this->session->userdata('user_id') != '') { ?>
+                    <li class="menu-li parent"><a class="menu-links <?php echo($this->uri->segment(1) == 'login' || $this->uri->segment(1) == 'register') ? 'active-menu-link' :'' ?>" href="#">Account</a>
+                        <ul class="child last-child">
+                            <li><a href="<?php echo base_url('payment-data'); ?>">Payments</a></li>
+                            <li><a href="<?php echo base_url('logout'); ?>">Log out</a></li>
+                        </ul>
+                    </li>
+                    <?php }else{ ?>
                     <li class="menu-li">
                         <a href="<?php echo base_url('login'); ?>" class="menu-call-to-action">Login</a>
                     </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

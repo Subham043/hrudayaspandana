@@ -160,7 +160,7 @@
             </div> 
 
             <div class="success-div" id="success_div" style="">
-                <img src="<?php echo base_url(); ?>assets/images/qr.png" alt=""><br>
+                <img src="<?php echo base_url(); ?>assets/images/qr.jpg" alt=""><br>
                 <a href="<?php echo base_url(); ?>">Continue to Home Page</a>
             </div>
 

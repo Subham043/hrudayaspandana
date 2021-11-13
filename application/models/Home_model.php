@@ -204,4 +204,8 @@ class Home_model extends CI_Model {
         return $this->db->where('id',1)->get('video')->row();
     }
 
+    public function getAllCrossword(){
+        return $this->db->order_by('id','desc')->get('crossword')->result();
+    }
+
 }

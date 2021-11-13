@@ -108,6 +108,10 @@
                                 class="<?php echo ($this->uri->segment(2) == 'video') ? 'active' : '' ?>">Video</a></span></div>
                 </li>
             </ul>
+            <li><a class="<?php echo $this->uri->segment(1) == 'crossword'?'active':'' ?>"
+                    href="<?php echo base_url('crossword') ?>"><i class="fas fa-puzzle-piece li-icon"></i>
+                    Crossword</a>
+            </li>
             
         </ul>
     </div>

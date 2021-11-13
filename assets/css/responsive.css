@@ -140,6 +140,10 @@
     .about .trust-page-row{
         align-items: center;
     }
+
+    .parent:hover>.last-child {
+        left: 0;
+    }
 }
 
 @media screen and (max-width: 991px){
@@ -417,7 +421,7 @@
     }
 
     .gallery .gallery-box .img-thumbnail {
-        width: 48%;
+        width: 95%;
     }
 
     .blogs {

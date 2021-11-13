@@ -87,7 +87,7 @@
                 <div class="col-2-about">
                     <div class="heading">
                         <p class="upper-heading">welcome</p>
-                        <h4 class="lower-heading">Experience Yoga at Our Vihara Ashram Studio</h4>
+                        <h4 class="lower-heading">Come to heal your hearts</h4>
                     </div>
                 </div>
                 <div class="col-2-about">
@@ -103,9 +103,9 @@
                 <div class="col-3-about">
                     <div class="about-card">
                         <img onContextMenu="return false;"
-                            src="https://cdn.pixabay.com/photo/2020/01/16/08/17/rishikesh-4769868_960_720.jpg" alt=""
+                            src="<?php echo base_url(); ?>assets/images/about/about4.jpg" alt=""
                             class="about-card-img">
-                        <h4>Ashram</h4>
+                        <h4>Hrudayaspandana</h4>
                         <p>A spiritual hermitage in green valleys of the mountains where you can see millions of stars
                             at night.</p>
                     </div>
@@ -113,21 +113,21 @@
                 <div class="col-3-about">
                     <div class="about-card">
                         <img onContextMenu="return false;"
-                            src="https://cdn.pixabay.com/photo/2014/09/20/05/17/buddhists-453393_960_720.jpg" alt=""
+                            src="<?php echo base_url(); ?>assets/images/about/about6.jpg" alt=""
                             class="about-card-img">
-                        <h4>Get Involved</h4>
-                        <p>Our community is actively involved in the life of locals that require humanitarian support on
-                            a regular basis.</p>
+                        <h4>Sai Mayee Trust</h4>
+                        <p>We appreciate your contribution to the donation programs and will happily accept any help we
+                            can get.</p>
                     </div>
                 </div>
                 <div class="col-3-about">
                     <div class="about-card">
                         <img onContextMenu="return false;"
-                            src="https://cdn.pixabay.com/photo/2014/09/20/04/04/buddhists-453317_960_720.jpg" alt=""
+                            src="<?php echo base_url(); ?>assets/images/about/about5.jpg" alt=""
                             class="about-card-img">
-                        <h4>Donation</h4>
-                        <p>We appreciate your contribution to the donation programs and will happily accept any help we
-                            can get.</p>
+                        <h4>Sri Sai Meru Mathi Trust</h4>
+                        <p>Our community is actively involved in the life of locals that require humanitarian support on
+                            a regular basis.</p>
                     </div>
                 </div>
             </div>
@@ -140,8 +140,7 @@
                 <div class="col-2-donation">
                     <div class="heading">
                         <p class="upper-heading">donations</p>
-                        <h4 class="lower-heading">Dakshina:
-                            Yoga’s Practice of “Giving Back”</h4>
+                        <h4 class="lower-heading">We together can make a difference...</h4>
                     </div>
                     <div class="paragraph">
                         <p>Dakshina is an ancient tradition of those who practice yoga, and it is a display of
@@ -267,8 +266,7 @@
         <div class="wrapper">
             <div class="heading">
                 <h4>Subscribe For More Updates</h4>
-                <p>Join the Happiness Program. Experience a calm mind, reduced anxiety, increased energy levels and
-                    sustainable happiness everyday!</p>
+                <p>Life is challenge, meet it! Life is a dream, realize it! Life is a game, Play it! Life is love, spread it!</p>
                 <form id="subscribeForm" method="post">
                     <div class="row mb-4">
                         <div class="col-lg-4">
@@ -401,7 +399,7 @@
         <div class="wrapper">
             <div class="heading">
                 <p class="upper-heading">Events</p>
-                <h4 class="lower-heading">Upcoming Events</h4>
+                <h4 class="lower-heading">Events</h4>
             </div>
             <div class="blogs-main">
                 <div class="blog-main-row">
@@ -434,48 +432,49 @@
                         </div>
                     </div> -->
                     <div class="col-lg-5 blog-main-single">
+                        <a href="<?php echo base_url('events/past-events'); ?>" class="blog-link">
+                            <div class="col-blog-2 blog-img-bottom">
+                                <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/swamy2.jpg"
+                                    alt="">
+                            </div>
+                            <div class="blog-single-inner-row">
+                                <div class="col-blog-2 blog-text-top">
+                                    <!-- <p class="blog-time">Wednesday, March 25, 2015</p> -->
+                                    <h4 class="blog-heading">Past Events</h4>
+                                    <!-- <p class="blog-text">Nerline Valery lived in a tent for four years after the Haiti
+                                    earthquake. Now she and her family have a a new home. We can start thinking that the
+                                    “best” corporate worship context is characterized by bright stage lights, fog, high
+                                    end
+                                    musical gear.</p> -->
+                                    <a href="<?php echo base_url('events/past-events'); ?>" class="blog-link-read">View
+                                        More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-5 blog-main-single">
                         <div class="blog-single-inner-row">
-                            <a href="<?php echo base_url('events/manava-seva'); ?>" class="blog-link">
+                            <a href="<?php echo base_url('events/upcoming-events'); ?>" class="blog-link">
                                 <div class="col-blog-2 blog-img-bottom">
                                     <img onContextMenu="return false;"
-                                        src="<?php echo base_url(); ?>assets/images/pray.jpg" alt="">
+                                        src="<?php echo base_url(); ?>assets/images/swamy1.jpg" alt="">
                                 </div>
                                 <div class="col-blog-2 blog-text-top">
                                     <!-- <p class="blog-time">Wednesday, March 25, 2015</p> -->
-                                    <h4 class="blog-heading">Manava Seva
+                                    <h4 class="blog-heading">Upcoming Events
                                     </h4>
                                     <!-- <p class="blog-text">Nerline Valery lived in a tent for four years after the Haiti
                                     earthquake. Now she and her family have a a new home. We can start thinking that the
                                     “best” corporate worship context is characterized by bright stage lights, fog, high
                                     end
                                     musical gear.</p> -->
-                                    <a href="<?php echo base_url('events/manava-seva'); ?>" class="blog-link-read">View
+                                    <a href="<?php echo base_url('events/upcoming-events'); ?>" class="blog-link-read">View
                                         More</a>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-5 blog-main-single">
-                        <a href="<?php echo base_url('events/madhava-seva'); ?>" class="blog-link">
-                            <div class="col-blog-2 blog-img-bottom">
-                                <img onContextMenu="return false;" src="<?php echo base_url(); ?>assets/images/pray.jpg"
-                                    alt="">
-                            </div>
-                            <div class="blog-single-inner-row">
-                                <div class="col-blog-2 blog-text-top">
-                                    <!-- <p class="blog-time">Wednesday, March 25, 2015</p> -->
-                                    <h4 class="blog-heading">Madhava Seva</h4>
-                                    <!-- <p class="blog-text">Nerline Valery lived in a tent for four years after the Haiti
-                                    earthquake. Now she and her family have a a new home. We can start thinking that the
-                                    “best” corporate worship context is characterized by bright stage lights, fog, high
-                                    end
-                                    musical gear.</p> -->
-                                    <a href="<?php echo base_url('events/madhava-seva'); ?>" class="blog-link-read">View
-                                        More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -485,7 +484,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="call-to-action-text">
-                    Every dollar makes a difference. Contribute today to create a better tommorow.
+                    Every rupee makes a difference. Contribute today to create a better tommorow.
                 </div>
                 <div class="call-to-action-button">
                     <a href="<?php echo base_url('donation'); ?>" class="call-to-action-href">DONATE NOW</a>

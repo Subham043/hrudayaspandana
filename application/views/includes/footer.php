@@ -37,7 +37,7 @@
                         <a href="<?php echo base_url('literature'); ?>" class="footer-link-href">Literature</a>
                     </li>
                     <li class="footer-link">
-                        <a href="<?php echo base_url('gallery'); ?>" class="footer-link-href">Gallery</a>
+                        <a href="<?php echo base_url('crossword'); ?>" class="footer-link-href">Crossword</a>
                     </li>
                     <li class="footer-link">
                         <a href="#" class="footer-link-href">Blogs</a>

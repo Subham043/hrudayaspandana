@@ -76,6 +76,12 @@ $route['events/(:any)'] = 'Home/events/$1';
 $route['events/(:any)/(:any)'] = 'Home/event_detail/$1/$2';
 $route['volunteer'] = 'Home/volunteer';
 $route['subscribe'] = 'Home/subscribe';
+$route['faq'] = 'Home/faq';
+$route['crossword'] = 'Home/crossword';
+$route['testimonial'] = 'Home/testimonial';
+$route['media'] = 'Home/media';
+$route['find-us'] = 'Home/findUs';
+$route['leadership-team'] = 'Home/leadershipTeam';
 $route['404'] = 'Home/pageNotFound';
 $route['qr'] = 'Home/qr';
 

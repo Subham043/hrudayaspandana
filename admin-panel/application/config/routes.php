@@ -109,6 +109,12 @@ $route['services/videos/delete/(:any)/(:any)']  	= 'Services/videos_delete/$1/$2
 $route['services/delete/(:any)/(:any)']  	= 'Services/delete/$1/$2';
 
 
+$route['crossword']  	= 'Crossword';
+$route['crossword/upload']  	= 'Crossword/upload';
+$route['crossword/view']  	= 'Crossword/view';
+$route['crossword/delete/(:any)']  	= 'Crossword/delete/$1';
+
+
 
 
 
